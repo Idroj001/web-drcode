@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - {Dr.Code}</title>
+  <meta name="description" content="Contacta a {Dr.Code} para discutir tu proyecto digital. Estamos disponibles para ayudarte.">
+  <meta name="color-scheme" content="light">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <canvas id="matrix"></canvas>
+  
+  <div id="header-container"></div>
+
+  <main>
+    <div class="container">
+      <section class="section contact-section">
+        <h1 style="text-align: center; margin-bottom: 1rem;">Contacto</h1>
+        <p class="hero-subtitle" style="text-align: center;">
+          ¿Tienes alguna pregunta o quieres trabajar con nosotros? Envíanos un mensaje y te responderemos pronto.
+        </p>
+        
+        <div class="card">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Nombre <span class="form-required">*</span></label>
+              <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email <span class="form-required">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="tu@email.com">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Teléfono <span class="form-required">*</span></label>
+              <input type="tel" id="phone" name="phone" required placeholder="+593 XX XXX XXXX">
+            </div>
+            
+            <div class="form-group">
+              <label for="service">Servicio de interés</label>
+              <select id="service" name="service">
+                <option value="">Selecciona un servicio</option>
+                <option value="web">Página Web</option>
+                <option value="landing">Landing Page</option>
+                <option value="carrito">Carrito de Compras</option>
+                <option value="menu">Menú Digital</option>
+                <option value="tarjeta">Tarjeta de Presentación</option>
+                <option value="automatizacion">Automatización</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Mensaje <span class="form-required">*</span></label>
+              <textarea id="message" name="message" required placeholder="Cuéntanos sobre tu proyecto, ideas o preguntas..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="section contact-info">
+        <h2 style="margin-bottom: 1.5rem;">Otras formas de contactarnos</h2>
+        
+        <div class="card" style="max-width: 400px; margin: 0 auto;">
+          <p style="margin-bottom: 1rem;">
+            <strong><i class="fa-solid fa-envelope"></i> Email:</strong><br>
+            <a href="mailto:jordy.kombi@gmail.com">jordy.kombi@gmail.com</a>
+          </p>
+          
+          <p style="margin-bottom: 1rem;">
+            <strong><i class="fa-solid fa-mobile-screen"></i> WhatsApp:</strong><br>
+            <a href="https://wa.me/593999806465" target="_blank" rel="noopener">+593 999 806 465</a>
+          </p>
+          
+          <p>
+            <strong><i class="fa-solid fa-calendar"></i> Agendamiento:</strong><br>
+            <a href="calendario.html">Reservar una cita</a>
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/canvas.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

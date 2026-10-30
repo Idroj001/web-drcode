@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="1000" height="300">
+  <defs>
+    <linearGradient id="greenGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#39ff75;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#008f11;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#007f4f;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <text x="140" y="205" font-family="monospace" font-size="150" font-weight="bold" fill="url(#greenGlow)" filter="url(#glow)" text-anchor="middle">{</text>
+  <text x="275" y="205" font-family="monospace" font-size="150" font-weight="normal" fill="#111111" text-anchor="middle">Dr</text>
+  <text x="410" y="205" font-family="monospace" font-size="150" font-weight="normal" fill="#111111" text-anchor="middle">.</text>
+  <text x="635" y="205" font-family="monospace" font-size="150" font-weight="normal" fill="#111111" text-anchor="middle">Code</text>
+  <text x="860" y="205" font-family="monospace" font-size="150" font-weight="bold" fill="url(#greenGlow)" filter="url(#glow)" text-anchor="middle">}</text>
+</svg>

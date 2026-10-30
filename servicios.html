@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios - {Dr.Code}</title>
+  <meta name="description" content="Servicios digitales de {Dr.Code}: páginas web, landing pages, carritos de compras, menús digitales, tarjetas de presentación y automatizaciones.">
+  <meta name="color-scheme" content="light">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <canvas id="matrix"></canvas>
+  
+  <div id="header-container"></div>
+
+  <main>
+    <div class="container">
+      <section class="section">
+        <h1 style="text-align: center; margin-bottom: 1rem;">Nuestros Servicios</h1>
+        <p class="hero-subtitle" style="text-align: center;">
+          Soluciones digitales adaptadas a tus necesidades. Cada proyecto es único, por eso trabajamos para transformar tu visión en realidad.
+        </p>
+        
+        <div class="services-grid">
+          <div class="card service-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="service-icon"><i class="fa-solid fa-globe"></i></span>
+                <h3 class="service-title">Páginas Web</h3>
+                <p class="service-desc">Sitios web profesionales con diseño responsivo, optimizados para SEO y conversion. Ideal para negocios que quieren presencia seria en internet.</p>
+                <button class="btn btn-primary" onclick="openModal({date:'', time:''})">Solicitar</button>
+              </div>
+              <div class="card-back">
+                <a href="demo-web.html" aria-label="Ver demo de Páginas Web">
+                  <img src="assets/previews/pagina-web.jpg" alt="Páginas Web">
+                  <span class="card-back-label">Ver Demo →</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card service-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="service-icon"><i class="fa-solid fa-mobile-screen"></i></span>
+                <h3 class="service-title">Landing Pages</h3>
+                <p class="service-desc">Páginas de aterrizaje enfocadas en conversión. Perfectas para campañas publicitarias, lanzamientos de productos o servicios específicos.</p>
+                <button class="btn btn-primary" onclick="openModal({date:'', time:''})">Solicitar</button>
+              </div>
+              <div class="card-back">
+                <a href="demo-landing.html" aria-label="Ver demo de Landing Pages">
+                  <img src="assets/previews/landing.jpg" alt="Landing Pages">
+                  <span class="card-back-label">Ver Demo →</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card service-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="service-icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                <h3 class="service-title">Carritos de Compras</h3>
+                <p class="service-desc">Tienda online que conecta directamente con WhatsApp. Tus clientes seleccionan productos y reciben el pedido en su celular listo para comprar.</p>
+                <button class="btn btn-primary" onclick="openModal({date:'', time:''})">Solicitar</button>
+              </div>
+              <div class="card-back">
+                <a href="demo-carrito.html" aria-label="Ver demo de Carritos de Compras">
+                  <img src="assets/previews/carrito.jpg" alt="Carritos de Compras">
+                  <span class="card-back-label">Ver Demo →</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card service-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="service-icon"><i class="fa-solid fa-clipboard-list"></i></span>
+                <h3 class="service-title">Menús Digitales</h3>
+                <p class="service-desc">Menú interactivo accessible por código QR. Actualiza precios y platillos facilmente desde tu panel de control. Ideal para restaurantes.</p>
+                <button class="btn btn-primary" onclick="openModal({date:'', time:''})">Solicitar</button>
+              </div>
+              <div class="card-back">
+                <a href="demo-menu.html" aria-label="Ver demo de Menús Digitales">
+                  <img src="assets/previews/menu.jpg" alt="Menús Digitales">
+                  <span class="card-back-label">Ver Demo →</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card service-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="service-icon"><i class="fa-solid fa-credit-card"></i></span>
+                <h3 class="service-title">Tarjetas de Presentación</h3>
+                <p class="service-desc">Tarjeta digital profesional que se comparte por QR o enlace. Incluye tu información de contacto, servicios, redes sociales y más.</p>
+                <button class="btn btn-primary" onclick="openModal({date:'', time:''})">Solicitar</button>
+              </div>
+              <div class="card-back">
+                <a href="demo-tarjeta.html" aria-label="Ver demo de Tarjetas de Presentación">
+                  <img src="assets/previews/tarjeta.jpg" alt="Tarjetas de Presentación">
+                  <span class="card-back-label">Ver Demo →</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card service-card">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="service-icon"><i class="fa-solid fa-robot"></i></span>
+                <h3 class="service-title">Automatizaciones</h3>
+                <p class="service-desc">Automatizamos procesos de tu negocio: respuestas automáticas en WhatsApp, confirmación de citas, notificaciones y más flujos de trabajo.</p>
+                <button class="btn btn-primary" onclick="openModal({date:'', time:''})">Solicitar</button>
+              </div>
+              <div class="card-back">
+                <a href="demo-automatizacion.html" aria-label="Ver demo de Automatizaciones">
+                  <img src="assets/previews/automatizacion.jpg" alt="Automatizaciones">
+                  <span class="card-back-label">Ver Demo →</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="text-align: center; margin-top: 3rem;">
+        <h2>¿Necesitas algo personalizado?</h2>
+        <p style="margin-bottom: 1.5rem;">Contáctanos y diseñamos la solución perfecta para tu negocio.</p>
+        <a href="contacto.html" class="btn btn-primary">Contactar</a>
+      </section>
+    </div>
+  </main>
+
+  <div id="modal-container"></div>
+
+  <div id="footer-container"></div>
+
+  <script src="js/canvas.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
