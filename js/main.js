@@ -262,6 +262,14 @@ function handleFieldInput(e) {
   }
 }
 
+function openModalFor(service) {
+  const serviceSelect = document.getElementById('service');
+  if (serviceSelect && SERVICE_LABELS[service]) {
+    serviceSelect.value = service;
+  }
+  openModal();
+}
+
 function openModal(scheduleData = null) {
   const modal = document.getElementById('contactModal');
   const overlay = document.querySelector('.modal-overlay');
@@ -891,3 +899,4 @@ function initSkillsCarousel() {
 
 window.openModal = openModal;
 window.closeModal = closeModal;
+window.openModalFor = openModalFor;
