@@ -1,0 +1,21 @@
+{
+  "name": "drcode-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Sitio web de {Dr.Code}",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:smoke": "playwright test tests/smoke.spec.mjs",
+    "test:theme-nav": "playwright test tests/theme-nav.spec.mjs",
+    "test:contact": "playwright test tests/contact.spec.mjs",
+    "test:calendar": "playwright test tests/calendar.spec.mjs",
+    "test:skills": "playwright test tests/skills.spec.mjs",
+    "test:report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0"
+  }
+}

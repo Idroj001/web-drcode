@@ -5,17 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agendamiento - {Dr.Code}</title>
   <meta name="description" content="Agenda una cita con {Dr.Code}.">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('drcode_theme');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 </head>
 <body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
   <canvas id="matrix"></canvas>
   
   <div id="header-container"></div>
 
-  <main>
+  <main id="main" tabindex="-1">
     <div class="container">
       <section class="section" style="text-align: center;">
         <h1>Agenda una Cita</h1>
@@ -27,6 +37,13 @@
 
         <div class="calendar-days" id="calendar"></div>
 
+        <ul class="slot-legend">
+          <li><span class="legend-dot available" aria-hidden="true"></span>Disponible</li>
+          <li><span class="legend-dot pending" aria-hidden="true"></span>Pendiente</li>
+          <li><span class="legend-dot confirmed" aria-hidden="true"></span>Confirmada</li>
+          <li><span class="legend-dot rejected" aria-hidden="true"></span>No disponible</li>
+        </ul>
+
         <div style="margin-top: 1.5rem;">
           <button id="weekToggle" class="btn btn-secondary">Siguiente Semana →</button>
         </div>
@@ -34,7 +51,7 @@
     </div>
   </main>
 
-  <div class="modal-overlay" id="calendarModalOverlay">
+  <div class="modal-overlay" id="calendarModalOverlay" aria-hidden="true">
     <div class="modal" id="calendarModal" role="dialog" aria-labelledby="calModalTitle" aria-modal="true">
       <div class="modal-header">
         <h2 class="modal-title" id="calModalTitle">Confirmar Cita</h2>
@@ -43,7 +60,7 @@
       <form class="contact-form" id="calendarForm" novalidate>
         <div class="form-group">
           <label for="calName">Nombre <span class="form-required">*</span></label>
-          <input type="text" id="calName" name="name" required placeholder="Tu nombre completo" autocomplete="name">
+          <input type="text" id="calName" name="name" required placeholder="Tu nombre completo" autocomplete="name" data-autofocus>
         </div>
         <div class="form-group">
           <label for="calPhone">Teléfono <span class="form-required">*</span></label>
@@ -75,14 +92,15 @@
     </div>
   </div>
 
-  <div class="modal-overlay" id="adminLoginOverlay" style="z-index: 300;">
-    <div class="modal" style="max-width: 350px; background: var(--white);">
+  <div class="modal-overlay" id="adminLoginOverlay" aria-hidden="true">
+    <div class="modal admin-modal" id="adminLoginModal" role="dialog" aria-modal="true" aria-labelledby="adminLoginTitle">
       <div class="modal-header">
-        <h3 class="modal-title" style="font-size: 1.2rem; color: var(--cortina-green);">Acceso Admin</h3>
-        <button class="modal-close" id="adminLoginClose" style="color: var(--black);">&times;</button>
+        <h3 class="modal-title" id="adminLoginTitle">Acceso Admin</h3>
+        <button class="modal-close" id="adminLoginClose" aria-label="Cerrar">&times;</button>
       </div>
-      <div style="padding: 0 0 1rem;">
-        <input type="password" id="adminPass" placeholder="Contraseña" style="width:100%;padding:0.75rem;font-family:'VT323',monospace;font-size:1.1rem;border:2px solid var(--cortina-green);border-radius:0.5rem;margin-bottom:1rem;background:var(--white);color:var(--black);">
+      <div class="admin-body">
+        <label class="sr-only" for="adminPass">Contraseña de administrador</label>
+        <input type="password" id="adminPass" class="admin-pass" placeholder="Contraseña" autocomplete="current-password" data-autofocus>
         <button id="adminLoginBtn" class="btn btn-primary" style="width:100%;">Ingresar</button>
       </div>
     </div>

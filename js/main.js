@@ -6,12 +6,12 @@ const PARTIALS = {
     <a href="index.html" class="logo">
       <span class="logo-braces">{</span><span class="logo-text">Dr</span><span class="logo-dot">.</span><span class="logo-text">Code</span><span class="logo-braces">}</span>
     </a>
-    <button class="hamburger" aria-label="Menu de navegacion" aria-expanded="false">
+    <button class="hamburger" aria-label="Menú de navegación" aria-expanded="false" aria-controls="nav-menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
-    <nav>
+    <nav id="nav-menu" aria-label="Navegación principal">
       <ul class="nav-menu">
         <li><a href="index.html" class="nav-link" data-page="index">Inicio</a></li>
         <li><a href="servicios.html" class="nav-link" data-page="servicios">Servicios</a></li>
@@ -27,27 +27,21 @@ const PARTIALS = {
     <div class="footer-logo">
       <span class="logo-braces">{</span><span class="logo-text">Dr</span><span class="logo-dot">.</span><span class="logo-text">Code</span><span class="logo-braces">}</span>
     </div>
-    <p class="footer-copy">Todos los derechos reservados &copy; 2025 {Dr.Code}</p>
+    <p class="footer-copy">Todos los derechos reservados &copy; ${new Date().getFullYear()} {Dr.Code}</p>
     <div class="social-links">
-      <a href="#" class="social-link" aria-label="GitHub" title="GitHub">
-        <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      <a href="https://wa.me/${WHATSAPP_NUMBER}" target="_blank" rel="noopener" class="social-link" aria-label="Escribir por WhatsApp" title="WhatsApp">
+        <svg viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
       </a>
-      <a href="#" class="social-link" aria-label="Facebook" title="Facebook">
-        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      <a href="mailto:jordy.mh_1994@hotmail.com" class="social-link" aria-label="Enviar un correo" title="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5v2.2z"/></svg>
       </a>
-      <a href="#" class="social-link" aria-label="Instagram" title="Instagram">
-        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-      </a>
-      <a href="#" class="social-link" aria-label="TikTok" title="TikTok">
-        <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v6.16c0 2.52-1.12 4.84-2.93 6.24-1.73 1.34-3.85 2.08-6.07 1.75-3.22-.48-5.87-2.99-6.66-6.14-.88-3.51.29-7.19 2.87-9.51 2.6-2.29 6.37-2.98 9.41-1.44V.02z"/></svg>
-      </a>
-      <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn">
-        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      <a href="calendario.html" class="social-link" aria-label="Agendar una cita" title="Agendar cita">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1V3a1 1 0 0 1 1-1zM5 9v9h14V9H5z"/></svg>
       </a>
     </div>
   </div>
 </footer>`,
-  modal: `<div class="modal-overlay">
+  modal: `<div class="modal-overlay" aria-hidden="true">
   <div class="modal" id="contactModal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
     <div class="modal-header">
       <h2 class="modal-title" id="modalTitle">Solicitar Servicio</h2>
@@ -56,31 +50,31 @@ const PARTIALS = {
     <form class="contact-form" id="contactForm" novalidate>
       <div class="form-group">
         <label for="name">Nombre <span class="form-required">*</span></label>
-        <input type="text" id="name" name="name" required placeholder="Tu nombre completo" autocomplete="name">
+        <input type="text" id="name" name="name" required placeholder="Tu nombre completo" autocomplete="name" data-autofocus>
       </div>
       <div class="form-group">
         <label for="email">Email <span class="form-required">*</span></label>
         <input type="email" id="email" name="email" required placeholder="tu@email.com" autocomplete="email">
       </div>
       <div class="form-group">
-        <label for="phone">Telefono <span class="form-required">*</span></label>
+        <label for="phone">Teléfono <span class="form-required">*</span></label>
         <input type="tel" id="phone" name="phone" required placeholder="+593 XX XXX XXXX" autocomplete="tel">
       </div>
       <div class="form-group">
         <label for="service">Servicio</label>
         <select id="service" name="service">
-          <option value="web">Pagina Web</option>
+          <option value="web">Página Web</option>
           <option value="landing">Landing Page</option>
           <option value="carrito">Carrito de Compras</option>
-          <option value="menu">Menu Digital</option>
-          <option value="tarjeta">Tarjeta de Presentacion</option>
-          <option value="automatizacion">Automatizacion</option>
+          <option value="menu">Menú Digital</option>
+          <option value="tarjeta">Tarjeta de Presentación</option>
+          <option value="automatizacion">Automatización</option>
           <option value="agendamiento">Agendamiento de Cita</option>
         </select>
       </div>
       <div class="form-group">
         <label for="message">Mensaje</label>
-        <textarea id="message" name="message" placeholder="Cuentanos sobre tu proyecto..."></textarea>
+        <textarea id="message" name="message" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
     </form>
@@ -112,6 +106,212 @@ function saveSlots() {
   }
 }
 
+/* ---------------------------------------------------------------------------
+   Tema claro / oscuro
+   --------------------------------------------------------------------------- */
+
+const THEME_KEY = 'drcode_theme';
+
+const THEME_ICONS = {
+  sun: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>',
+  moon: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
+};
+
+function getStoredTheme() {
+  try {
+    return localStorage.getItem(THEME_KEY);
+  } catch (e) {
+    return null;
+  }
+}
+
+function getPreferredTheme() {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    return 'dark';
+  }
+  return 'light';
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  const btn = document.querySelector('.theme-toggle-float');
+  if (!btn) return;
+  const isDark = theme === 'dark';
+  btn.innerHTML = isDark ? THEME_ICONS.sun : THEME_ICONS.moon;
+  btn.setAttribute('aria-pressed', String(isDark));
+  btn.setAttribute('aria-label', isDark ? 'Activar modo claro' : 'Activar modo oscuro');
+  btn.setAttribute('title', isDark ? 'Activar modo claro' : 'Activar modo oscuro');
+}
+
+function initThemeToggle() {
+  const attr = document.documentElement.getAttribute('data-theme');
+  const current = attr === 'dark' || attr === 'light' ? attr : getPreferredTheme();
+
+  if (!document.querySelector('.theme-toggle-float')) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'theme-toggle-float';
+    btn.innerHTML = THEME_ICONS.moon;
+    btn.addEventListener('click', () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      try {
+        localStorage.setItem(THEME_KEY, next);
+      } catch (e) {
+        /* almacenamiento no disponible: el tema dura la sesión */
+      }
+      applyTheme(next);
+    });
+    document.body.appendChild(btn);
+  }
+
+  applyTheme(current);
+
+  if (window.matchMedia) {
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    const onChange = (e) => {
+      if (!getStoredTheme()) applyTheme(e.matches ? 'dark' : 'light');
+    };
+    if (typeof mq.addEventListener === 'function') {
+      mq.addEventListener('change', onChange);
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Diálogos accesibles: foco atrapado, fondo inerte y retorno de foco
+   --------------------------------------------------------------------------- */
+
+const FOCUSABLE_SELECTOR = [
+  'a[href]',
+  'button:not([disabled])',
+  'input:not([disabled]):not([type="hidden"])',
+  'select:not([disabled])',
+  'textarea:not([disabled])',
+  '[tabindex]:not([tabindex="-1"])'
+].join(',');
+
+const dialogStates = new Map();
+let dialogStack = [];
+
+function getFocusable(container) {
+  return Array.from(container.querySelectorAll(FOCUSABLE_SELECTOR))
+    .filter(el => el.getClientRects().length > 0);
+}
+
+function setBackgroundInert(inert) {
+  const targets = document.querySelectorAll(
+    'header, main, footer, .whatsapp-float, .theme-toggle-float, .admin-badge'
+  );
+  targets.forEach(el => {
+    if (inert) {
+      el.setAttribute('inert', '');
+      el.setAttribute('aria-hidden', 'true');
+    } else {
+      el.removeAttribute('inert');
+      el.removeAttribute('aria-hidden');
+    }
+  });
+}
+
+function openDialog(overlay, modal, closeFn) {
+  if (!overlay || !modal) return;
+  if (overlay.classList.contains('open')) return;
+
+  const state = {
+    overlay,
+    modal,
+    close: closeFn,
+    opener: document.activeElement instanceof HTMLElement ? document.activeElement : null
+  };
+  dialogStates.set(overlay, state);
+  dialogStack.push(state);
+
+  overlay.classList.add('open');
+  overlay.setAttribute('aria-hidden', 'false');
+  modal.classList.add('open');
+  setBackgroundInert(true);
+  document.body.style.overflow = 'hidden';
+
+  window.setTimeout(() => {
+    if (!overlay.classList.contains('open')) return;
+    const target = modal.querySelector('[data-autofocus]') || getFocusable(modal)[0] || modal;
+    if (!modal.hasAttribute('tabindex') && target === modal) modal.setAttribute('tabindex', '-1');
+    target.focus();
+  }, 80);
+}
+
+function closeDialog(overlay, modal) {
+  if (!overlay) return;
+  const state = dialogStates.get(overlay);
+  const opener = state ? state.opener : null;
+
+  overlay.classList.remove('open');
+  if (modal) modal.classList.remove('open');
+  overlay.setAttribute('aria-hidden', 'true');
+  dialogStates.delete(overlay);
+  dialogStack = dialogStack.filter(item => item.overlay !== overlay);
+
+  if (!dialogStack.length) {
+    document.body.style.overflow = '';
+    setBackgroundInert(false);
+  }
+
+  const canRestoreFocus = opener && document.contains(opener) && !opener.disabled &&
+    typeof opener.matches === 'function' && opener.matches(FOCUSABLE_SELECTOR);
+
+  if (canRestoreFocus) {
+    window.setTimeout(() => opener.focus(), 0);
+  } else {
+    window.setTimeout(() => {
+      const fallback = document.querySelector('main h1') || document.querySelector('main');
+      if (!fallback) return;
+      if (!fallback.hasAttribute('tabindex')) fallback.setAttribute('tabindex', '-1');
+      fallback.focus();
+    }, 0);
+  }
+}
+
+function trapDialogFocus(event) {
+  const state = dialogStack[dialogStack.length - 1];
+  if (!state) return;
+
+  if (event.key === 'Escape') {
+    event.preventDefault();
+    if (typeof state.close === 'function') state.close();
+    return;
+  }
+
+  if (event.key !== 'Tab') return;
+
+  const focusable = getFocusable(state.modal);
+  if (!focusable.length) {
+    event.preventDefault();
+    state.modal.focus();
+    return;
+  }
+
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  const active = document.activeElement;
+
+  if (event.shiftKey && (active === first || !state.modal.contains(active))) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && (active === last || !state.modal.contains(active))) {
+    event.preventDefault();
+    first.focus();
+  }
+}
+
+document.addEventListener('keydown', trapDialogFocus);
+
+document.addEventListener('focusin', (event) => {
+  const state = dialogStack[dialogStack.length - 1];
+  if (!state || state.modal.contains(event.target)) return;
+  const focusable = getFocusable(state.modal);
+  if (focusable.length) focusable[0].focus();
+});
+
 function bindFieldValidation(form) {
   if (!form) return;
   form.querySelectorAll('input, select, textarea').forEach(field => {
@@ -123,9 +323,11 @@ function bindFieldValidation(form) {
 
 document.addEventListener('DOMContentLoaded', () => {
   loadPartials();
+  initThemeToggle();
   injectWhatsAppFloat();
   initNavigation();
   initModal();
+  initContactForm();
   updateActiveNavLink();
   if (document.getElementById('calendar')) {
     initCalendar();
@@ -137,7 +339,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function loadPartials() {
   const names = ['header', 'footer'];
-  if (!document.querySelector('.modal-overlay')) {
+  const pageHasOwnForm = !!document.querySelector('main form');
+  if (!document.querySelector('.modal-overlay') && !pageHasOwnForm) {
     names.push('modal');
   }
   names.forEach(name => {
@@ -172,24 +375,50 @@ function injectWhatsAppFloat() {
 function initNavigation() {
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav-menu');
-  
-  if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      hamburger.classList.toggle('active');
-    });
-  }
+  if (!hamburger || !navMenu) return;
+
+  const setOpen = (open) => {
+    navMenu.classList.toggle('active', open);
+    hamburger.classList.toggle('active', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+  };
+
+  hamburger.addEventListener('click', () => {
+    setOpen(!navMenu.classList.contains('active'));
+  });
+
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => setOpen(false));
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+      setOpen(false);
+      hamburger.focus();
+    }
+  });
 }
 
 function updateActiveNavLink() {
-  const url = new URL(window.location.href);
-  const currentPage = url.pathname.split('/').pop() || 'index.html';
-  const navLinks = document.querySelectorAll('.nav-link');
-  
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPage) {
-      link.classList.add('active');
+  const path = window.location.pathname.replace(/\\/g, '/');
+  const currentPage = path.split('/').pop() || 'index.html';
+  const demoPages = [
+    'demo-web.html',
+    'demo-landing.html',
+    'demo-carrito.html',
+    'demo-menu.html',
+    'demo-tarjeta.html',
+    'demo-automatizacion.html'
+  ];
+  const targetPage = demoPages.includes(currentPage) ? 'servicios.html' : currentPage;
+
+  document.querySelectorAll('.nav-link').forEach(link => {
+    const isActive = link.getAttribute('href') === targetPage;
+    link.classList.toggle('active', isActive);
+    if (isActive) {
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.removeAttribute('aria-current');
     }
   });
 }
@@ -210,18 +439,20 @@ function initModal() {
       if (e.target === overlay) closeModal();
     });
   }
-  
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('open')) {
-      closeModal();
-    }
-  });
-  
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', handleFormSubmit);
-    bindFieldValidation(contactForm);
+
+  const modalForm = modal.querySelector('form');
+  if (modalForm) {
+    modalForm.addEventListener('submit', handleFormSubmit);
+    bindFieldValidation(modalForm);
   }
+}
+
+function initContactForm() {
+  const pageForm = document.querySelector('main form#contactForm');
+  if (!pageForm) return;
+
+  pageForm.addEventListener('submit', handleFormSubmit);
+  bindFieldValidation(pageForm);
 }
 
 function handleFieldError(e) {
@@ -272,7 +503,7 @@ function openModalFor(service) {
 
 function openModal(scheduleData = null) {
   const modal = document.getElementById('contactModal');
-  const overlay = document.querySelector('.modal-overlay');
+  const overlay = modal ? modal.closest('.modal-overlay') : null;
   const serviceSelect = document.getElementById('service');
   const messageField = document.getElementById('message');
   
@@ -282,27 +513,16 @@ function openModal(scheduleData = null) {
   }
   
   if (modal && overlay) {
-    modal.classList.add('open');
-    overlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    
-    setTimeout(() => {
-      const firstInput = modal.querySelector('input:not([type="hidden"])');
-      if (firstInput) firstInput.focus();
-    }, 100);
+    openDialog(overlay, modal, closeModal);
   }
 }
 
 function closeModal() {
   const modal = document.getElementById('contactModal');
-  const overlay = document.querySelector('.modal-overlay');
-  
+  const overlay = modal ? modal.closest('.modal-overlay') : null;
+
   if (modal && overlay) {
-    modal.classList.remove('open');
-    overlay.classList.remove('open');
-    document.body.style.overflow = '';
-    
-    const form = document.getElementById('contactForm');
+    const form = modal.querySelector('form');
     if (form) {
       form.reset();
       form.querySelectorAll('.has-error').forEach(g => {
@@ -311,48 +531,51 @@ function closeModal() {
         if (err) err.remove();
       });
     }
+    closeDialog(overlay, modal);
   }
 }
 
 function handleFormSubmit(e) {
   e.preventDefault();
-  
+
   const form = e.target;
   if (!form.checkValidity()) {
     const firstInvalid = form.querySelector(':invalid');
     if (firstInvalid) firstInvalid.focus();
     return;
   }
-  
+
   const submitBtn = form.querySelector('button[type="submit"]');
   const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '';
   if (submitBtn) {
     submitBtn.disabled = true;
-    submitBtn.innerHTML = 'Enviando...';
+    submitBtn.textContent = 'Abriendo WhatsApp...';
   }
-  
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const phone = document.getElementById('phone').value;
-  const service = document.getElementById('service').value;
-  const message = document.getElementById('message').value;
-  
-  const serviceText = SERVICE_LABELS[service] || service;
-  
-  const whatsappMessage = `*Nueva Solicitud - {Dr.Code}*%0A%0A` +
-    `*Nombre:* ${name}%0A` +
-    `*Email:* ${email}%0A` +
-    `*Telefono:* ${phone}%0A` +
-    `*Servicio:* ${serviceText}%0A` +
-    `*Mensaje:* ${message}`;
-  
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
-  
-  window.location.href = whatsappUrl;
-  
+
+  const value = (name) => {
+    const field = form.elements[name];
+    return field ? field.value.trim() : '';
+  };
+
+  const service = value('service');
+  const serviceText = SERVICE_LABELS[service] || service || 'No especificado';
+
+  const whatsappMessage = [
+    '*Nueva Solicitud - {Dr.Code}*',
+    '',
+    `*Nombre:* ${value('name')}`,
+    `*Email:* ${value('email')}`,
+    `*Teléfono:* ${value('phone')}`,
+    `*Servicio:* ${serviceText}`,
+    `*Mensaje:* ${value('message')}`
+  ].join('\n');
+
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
+
+  window.open(whatsappUrl, '_blank', 'noopener');
   closeModal();
-  showToast('Mensaje enviado correctamente. Te contactaremos pronto.');
-  
+  showToast('Abriendo WhatsApp con tu solicitud...');
+
   if (submitBtn) {
     submitBtn.disabled = false;
     submitBtn.innerHTML = originalBtnHTML;
@@ -428,12 +651,6 @@ function initCalendar() {
   }
   
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      const calModal = document.getElementById('calendarModal');
-      if (calModal && calModal.classList.contains('open')) {
-        closeCalendarModal();
-      }
-    }
     if (e.ctrlKey && e.shiftKey && e.key === 'L') {
       if (isAdmin) {
         isAdmin = false;
@@ -455,18 +672,36 @@ function initCalendar() {
   }
 }
 
+function toDateKey(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
 function getWeekDates(offset = 0) {
   const today = new Date();
-  const startOfWeek = new Date(today);
-  startOfWeek.setDate(today.getDate() - today.getDay() + 1 + (offset * 7));
-  
+  today.setHours(0, 0, 0, 0);
+  // getDay(): domingo = 0. Se normaliza a 7 para que la semana empiece siempre en lunes.
+  const weekday = today.getDay() || 7;
+  const monday = new Date(today);
+  monday.setDate(today.getDate() - weekday + 1 + (offset * 7));
+
   const dates = [];
   for (let i = 0; i < 7; i++) {
-    const date = new Date(startOfWeek);
-    date.setDate(startOfWeek.getDate() + i);
+    const date = new Date(monday);
+    date.setDate(monday.getDate() + i);
     dates.push(date);
   }
   return dates;
+}
+
+// "Mañana" se puede reservar hasta las 12:00 del día; "Tarde" hasta las 20:00.
+function isPastSlot(date, time) {
+  const now = new Date();
+  const endOfSlot = new Date(date);
+  endOfSlot.setHours(time === 'Mañana' ? 12 : 20, 0, 0, 0);
+  return now >= endOfSlot;
 }
 
 function renderCalendar() {
@@ -492,7 +727,7 @@ function renderCalendar() {
     const daySlot = document.createElement('div');
     daySlot.className = 'day-slot';
     
-    const dateStr = date.toISOString().split('T')[0];
+    const dateStr = toDateKey(date);
     const dayNum = String(date.getDate()).padStart(2, '0');
     const monthNum = String(date.getMonth() + 1).padStart(2, '0');
     
@@ -557,82 +792,76 @@ function openCalendarModal(dateStr, time) {
   
   document.getElementById('calModalTitle').textContent = `Confirmar Cita – ${dayName} ${dayNum}/${monthNum} – ${time}`;
   
-  overlay.classList.add('open');
-  modal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  
-  setTimeout(() => {
-    const firstInput = modal.querySelector('input');
-    if (firstInput) firstInput.focus();
-  }, 100);
+  openDialog(overlay, modal, closeCalendarModal);
 }
 
 function closeCalendarModal() {
   const overlay = document.getElementById('calendarModalOverlay');
   const modal = document.getElementById('calendarModal');
   if (!overlay || !modal) return;
-  
-  overlay.classList.remove('open');
-  modal.classList.remove('open');
-  document.body.style.overflow = '';
-  
+
   const form = document.getElementById('calendarForm');
   if (form) form.reset();
+
+  closeDialog(overlay, modal);
 }
 
 function handleCalendarSubmit(e) {
   e.preventDefault();
-  
+
   const form = e.target;
   if (!form.checkValidity()) {
     const firstInvalid = form.querySelector(':invalid');
     if (firstInvalid) firstInvalid.focus();
     return;
   }
-  
+
   const submitBtn = form.querySelector('button[type="submit"]');
   const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '';
   if (submitBtn) {
     submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fa-brands fa-whatsapp"></i> Enviando...';
+    submitBtn.textContent = 'Abriendo WhatsApp...';
   }
-  
-  const name = document.getElementById('calName').value;
-  const phone = document.getElementById('calPhone').value;
-  const email = document.getElementById('calEmail').value;
-  const service = document.getElementById('calService').value;
-  const message = document.getElementById('calMessage').value;
-  
+
+  const value = (name) => {
+    const field = form.elements[name];
+    return field ? field.value.trim() : '';
+  };
+
+  const service = value('service');
+  const serviceText = SERVICE_LABELS[service] || service || 'No especificado';
+
   const overlay = document.getElementById('calendarModalOverlay');
   const dateStr = overlay.dataset.date;
   const time = overlay.dataset.time;
-  
-  const serviceText = SERVICE_LABELS[service] || service || 'No especificado';
-  
-  const date = new Date(dateStr + 'T12:00:00');
+
+  const date = new Date(`${dateStr}T12:00:00`);
   const dayName = date.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' });
-  
-  const whatsappMessage = `*Agendamiento - {Dr.Code}*%0A%0A` +
-    `*Nombre:* ${name}%0A` +
-    `*Teléfono:* ${phone}%0A` +
-    `*Email:* ${email}%0A` +
-    `*Servicio:* ${serviceText}%0A` +
-    `*Día:* ${dayName}%0A` +
-    `*Jornada:* ${time}%0A` +
-    `*Mensaje:* ${message}`;
-  
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
-  
-  window.location.href = whatsappUrl;
-  
+
+  const whatsappMessage = [
+    '*Agendamiento - {Dr.Code}*',
+    '',
+    `*Nombre:* ${value('name')}`,
+    `*Teléfono:* ${value('phone')}`,
+    `*Email:* ${value('email') || 'No especificado'}`,
+    `*Servicio:* ${serviceText}`,
+    `*Día:* ${dayName}`,
+    `*Jornada:* ${time}`,
+    `*Mensaje:* ${value('message') || 'Sin mensaje'}`
+  ].join('\n');
+
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
+
+  window.open(whatsappUrl, '_blank', 'noopener');
+
   const key = `${dateStr}_${time}`;
   selectedSlots[key] = 'pending';
   saveSlots();
   updateSlotStates();
-  
+
   closeCalendarModal();
   showToast('Cita enviada. Te contactaremos para confirmar.');
-  
+
   if (submitBtn) {
     submitBtn.disabled = false;
     submitBtn.innerHTML = originalBtnHTML;
@@ -641,30 +870,52 @@ function handleCalendarSubmit(e) {
 
 function updateSlotStates() {
   const slots = document.querySelectorAll('.time-slot');
-  
+
   slots.forEach(slot => {
     const actions = slot.querySelector('.admin-actions');
     if (actions) actions.remove();
-    
+
     const dateStr = slot.dataset.date;
     const time = slot.dataset.time;
     const key = `${dateStr}_${time}`;
     const status = selectedSlots[key];
-    
-    slot.classList.remove('available', 'pending', 'confirmed', 'rejected');
-    
+    const past = isPastSlot(new Date(`${dateStr}T12:00:00`), time);
+
+    slot.classList.remove('available', 'pending', 'confirmed', 'rejected', 'past');
+    slot.title = '';
+
+    const daySlot = slot.closest('.day-slot');
+    const dayName = daySlot ? daySlot.querySelector('.day-name').textContent : '';
+    const dayDate = daySlot ? daySlot.querySelector('.day-date').textContent : '';
+
+    const setLabel = (stateText) => {
+      slot.setAttribute('aria-label', `${time} del ${dayName} ${dayDate}: ${stateText}`);
+    };
+
+    if (past) {
+      slot.classList.add('past');
+      slot.disabled = true;
+      slot.title = 'Este horario ya pasó';
+      setLabel('horario no disponible');
+      return;
+    }
+
     if (status === 'confirmed') {
       slot.classList.add('confirmed');
       slot.disabled = !isAdmin;
+      setLabel('cita confirmada');
     } else if (status === 'rejected') {
       slot.classList.add('rejected');
       slot.disabled = !isAdmin;
+      setLabel('no disponible');
     } else if (status === 'pending') {
       slot.classList.add('pending');
       slot.disabled = !isAdmin;
+      setLabel('pendiente de confirmación');
     } else {
       slot.classList.add('available');
       slot.disabled = false;
+      setLabel('disponible');
     }
   });
 }
@@ -672,21 +923,17 @@ function updateSlotStates() {
 function promptAdminLogin() {
   const overlay = document.getElementById('adminLoginOverlay');
   if (!overlay) return;
-  overlay.classList.add('open');
-  overlay.querySelector('.modal').classList.add('open');
-  setTimeout(() => {
-    const inp = document.getElementById('adminPass');
-    if (inp) inp.focus();
-  }, 100);
+  const modal = overlay.querySelector('.modal');
+  openDialog(overlay, modal, closeAdminLogin);
 }
 
 function closeAdminLogin() {
   const overlay = document.getElementById('adminLoginOverlay');
   if (!overlay) return;
-  overlay.classList.remove('open');
-  overlay.querySelector('.modal').classList.remove('open');
+  const modal = overlay.querySelector('.modal');
   const inp = document.getElementById('adminPass');
   if (inp) inp.value = '';
+  closeDialog(overlay, modal);
 }
 
 function handleAdminLogin() {
@@ -838,33 +1085,55 @@ function initSkillsCarousel() {
   ];
 
   let slidesHTML = '';
-  let dotsHTML = '<div class="carousel-dots">';
+  let dotsHTML = '<div class="carousel-dots" role="group" aria-label="Seleccionar habilidad">';
   skills.forEach((s, i) => {
     slidesHTML += `
-      <div class="carousel-slide${i === 0 ? ' active' : ''}">
+      <div class="carousel-slide${i === 0 ? ' active' : ''}" aria-hidden="${i === 0 ? 'false' : 'true'}">
         <div class="carousel-content">
           <img class="carousel-logo" src="${s.icon}" alt="${s.name}"${i > 1 ? ' loading="lazy"' : ''}>
           <span class="carousel-name">${s.name}</span>
           <p class="carousel-desc">${s.desc}</p>
         </div>
       </div>`;
-    dotsHTML += `<button class="carousel-dot${i === 0 ? ' active' : ''}" data-index="${i}" aria-label="${s.name}"></button>`;
+    dotsHTML += `<button class="carousel-dot${i === 0 ? ' active' : ''}" data-index="${i}" aria-current="${i === 0 ? 'true' : 'false'}" aria-label="${s.name} (${i + 1} de ${skills.length})"></button>`;
   });
   dotsHTML += '</div>';
+  dotsHTML += `
+    <div class="carousel-controls">
+      <button class="carousel-btn" type="button" data-carousel="prev" aria-label="Habilidad anterior">&#8592;</button>
+      <button class="carousel-btn" type="button" data-carousel="pause" aria-pressed="false" aria-label="Pausar cambio automático">&#10074;&#10074;</button>
+      <button class="carousel-btn" type="button" data-carousel="next" aria-label="Habilidad siguiente">&#8594;</button>
+    </div>`;
 
   container.innerHTML = slidesHTML + dotsHTML;
 
   const slides = container.querySelectorAll('.carousel-slide');
   const dots = container.querySelectorAll('.carousel-dot');
+  const prevBtn = container.querySelector('[data-carousel="prev"]');
+  const nextBtn = container.querySelector('[data-carousel="next"]');
+  const pauseBtn = container.querySelector('[data-carousel="pause"]');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let current = 0;
-  let interval;
+  let interval = null;
+  let userPaused = reduceMotion.matches;
+
+  function setPauseUI() {
+    if (!pauseBtn) return;
+    pauseBtn.setAttribute('aria-pressed', String(userPaused));
+    pauseBtn.setAttribute('aria-label', userPaused ? 'Reanudar cambio automático' : 'Pausar cambio automático');
+    pauseBtn.innerHTML = userPaused ? '&#9654;' : '&#10074;&#10074;';
+  }
 
   function goTo(index) {
     if (index === current) return;
     slides[current].classList.remove('active');
+    slides[current].setAttribute('aria-hidden', 'true');
     dots[current].classList.remove('active');
+    dots[current].setAttribute('aria-current', 'false');
     slides[index].classList.add('active');
+    slides[index].setAttribute('aria-hidden', 'false');
     dots[index].classList.add('active');
+    dots[index].setAttribute('aria-current', 'true');
     current = index;
   }
 
@@ -872,28 +1141,75 @@ function initSkillsCarousel() {
     goTo((current + 1) % slides.length);
   }
 
+  function prev() {
+    goTo((current - 1 + slides.length) % slides.length);
+  }
+
   function start() {
     stop();
+    if (userPaused || reduceMotion.matches) return;
     interval = setInterval(next, 3500);
   }
 
   function stop() {
     clearInterval(interval);
+    interval = null;
   }
 
   dots.forEach(dot => {
     dot.addEventListener('click', () => {
-      const idx = parseInt(dot.dataset.index);
-      if (idx !== current) {
-        goTo(idx);
-        start();
-      }
+      const idx = parseInt(dot.dataset.index, 10);
+      goTo(idx);
+      start();
     });
   });
 
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prev();
+      start();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      next();
+      start();
+    });
+  }
+
+  if (pauseBtn) {
+    pauseBtn.addEventListener('click', () => {
+      userPaused = !userPaused;
+      setPauseUI();
+      if (userPaused) stop();
+      else start();
+    });
+  }
+
   container.addEventListener('mouseenter', stop);
   container.addEventListener('mouseleave', start);
+  container.addEventListener('focusin', stop);
+  container.addEventListener('focusout', (e) => {
+    if (!container.contains(e.relatedTarget)) start();
+  });
 
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop();
+    else start();
+  });
+
+  if (typeof reduceMotion.addEventListener === 'function') {
+    reduceMotion.addEventListener('change', () => {
+      if (reduceMotion.matches) {
+        userPaused = true;
+        setPauseUI();
+        stop();
+      }
+    });
+  }
+
+  setPauseUI();
   start();
 }
 

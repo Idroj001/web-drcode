@@ -5,17 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{Dr.Code} - Soluciones Digitales</title>
   <meta name="description" content="{Dr.Code} - Soluciones digitales para negocios, profesionales e individuos. Paginas web, landings, carritos de compras, menus digitales y mas.">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('drcode_theme');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 </head>
 <body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
   <canvas id="matrix"></canvas>
   
   <div id="header-container"></div>
 
-  <main>
+  <main id="main" tabindex="-1">
     <div class="container">
       <section class="hero">
         <div class="hero-logo">
@@ -61,7 +71,7 @@
           <div class="card service-card">
             <span class="service-icon"><i class="fa-solid fa-credit-card"></i></span>
             <h3 class="service-title">Tarjetas de Presentación</h3>
-            <p class="service-desc">Tarjetas digitales profesionales que se comparten instantly por QR o enlace.</p>
+            <p class="service-desc">Tarjetas digitales profesionales que se comparten al instante por QR o enlace.</p>
           </div>
           
           <div class="card service-card">
