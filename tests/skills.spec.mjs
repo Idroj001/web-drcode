@@ -27,40 +27,43 @@ test.describe('carrusel de skills', () => {
     await expect(page.locator('.carousel-slide').first()).toHaveAttribute('aria-hidden', 'false');
   });
 
-  test('siguiente, anterior y puntos actualizan el slide y los aria', async ({ page }) => {
+  test('no hay botones de control, solo los puntos', async ({ page }) => {
+    await openSkills(page);
+
+    await expect(page.locator('.carousel-controls')).toHaveCount(0);
+    await expect(page.locator('.carousel-btn')).toHaveCount(0);
+    await expect(page.locator('button[data-carousel]')).toHaveCount(0);
+  });
+
+  test('los puntos cambian de habilidad y actualizan los aria', async ({ page }) => {
     await openSkills(page);
     const slides = page.locator('.carousel-slide');
     const dots = page.locator('.carousel-dot');
 
-    await page.locator('[data-carousel="next"]').click();
-    await expect(slides.nth(1)).toHaveClass(/active/);
-    await expect(slides.nth(1)).toHaveAttribute('aria-hidden', 'false');
-    await expect(dots.nth(1)).toHaveAttribute('aria-current', 'true');
-
-    await page.locator('[data-carousel="prev"]').click();
-    await expect(slides.nth(0)).toHaveClass(/active/);
-    await expect(dots.nth(0)).toHaveAttribute('aria-current', 'true');
-
     await dots.nth(4).click();
     await expect(slides.nth(4)).toHaveClass(/active/);
+    await expect(slides.nth(4)).toHaveAttribute('aria-hidden', 'false');
     await expect(dots.nth(4)).toHaveAttribute('aria-current', 'true');
+
+    await dots.nth(2).click();
+    await expect(slides.nth(2)).toHaveClass(/active/);
+    await expect(dots.nth(2)).toHaveAttribute('aria-current', 'true');
+    await expect(dots.nth(4)).toHaveAttribute('aria-current', 'false');
   });
 
-  test('pausa detiene el avance automático', async ({ page }) => {
+  test('avanza solo cada 3 segundos', async ({ page }) => {
     await page.clock.install();
     await openSkills(page);
+    await page.locator('#skills-carousel').scrollIntoViewIfNeeded();
     const slides = page.locator('.carousel-slide');
-    const pause = page.locator('[data-carousel="pause"]');
 
-    await page.clock.fastForward(3600);
+    await expect(slides.nth(0)).toHaveClass(/active/);
+
+    await page.clock.fastForward(3100);
     await expect(slides.nth(1)).toHaveClass(/active/);
 
-    await pause.click();
-    await expect(pause).toHaveAttribute('aria-pressed', 'true');
-    await expect(pause).toHaveAttribute('aria-label', 'Reanudar cambio automático');
-
-    await page.clock.fastForward(8000);
-    await expect(slides.nth(1)).toHaveClass(/active/);
+    await page.clock.fastForward(3000);
+    await expect(slides.nth(2)).toHaveClass(/active/);
   });
 });
 
@@ -72,13 +75,9 @@ test.describe('movimiento reducido', () => {
     await openSkills(page);
     const slides = page.locator('.carousel-slide');
 
-    await expect(page.locator('[data-carousel="pause"]')).toHaveAttribute(
-      'aria-pressed',
-      'true',
-    );
     await expect(slides.first()).toHaveClass(/active/);
 
-    await page.clock.fastForward(8000);
+    await page.clock.fastForward(9000);
     await expect(slides.first()).toHaveClass(/active/);
   });
 });

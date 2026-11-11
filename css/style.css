@@ -1484,40 +1484,6 @@ footer {
   color: var(--on-accent);
 }
 
-.carousel-controls {
-  position: absolute;
-  bottom: 0.75rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  z-index: 2;
-}
-
-.carousel-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 0 0.5rem;
-  border: 2px solid var(--green-accent);
-  border-radius: 50%;
-  background: var(--surface);
-  color: var(--green-text);
-  font-family: 'VT323', monospace;
-  font-size: 1.1rem;
-  line-height: 1;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.carousel-btn:hover {
-  background: var(--green-accent);
-  color: var(--on-accent);
-}
-
 .admin-pass {
   width: 100%;
   padding: 0.75rem;

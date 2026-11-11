@@ -325,6 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadPartials();
   initThemeToggle();
   injectWhatsAppFloat();
+  syncFloatsWithFooter();
   initNavigation();
   initModal();
   initContactForm();
@@ -362,14 +363,24 @@ function injectWhatsAppFloat() {
     </svg>
   </a>`;
   document.body.appendChild(el);
+}
+
+/* Ambos flotantes suben juntos al llegar al footer: misma altura,
+   mismo desplazamiento y mismo punto de parada. */
+function syncFloatsWithFooter() {
+  const floats = [
+    { el: document.querySelector('.whatsapp-float'), cls: 'whatsapp-float--above' },
+    { el: document.querySelector('.theme-toggle-float'), cls: 'theme-toggle-float--above' }
+  ].filter(item => item.el);
 
   const footer = document.querySelector('#footer-container footer');
-  if (footer) {
-    const observer = new IntersectionObserver(([entry]) => {
-      el.classList.toggle('whatsapp-float--above', entry.isIntersecting);
-    }, { rootMargin: '0px 0px 48px 0px' });
-    observer.observe(footer);
-  }
+  if (!footer || !floats.length) return;
+
+  const observer = new IntersectionObserver(([entry]) => {
+    floats.forEach(({ el, cls }) => el.classList.toggle(cls, entry.isIntersecting));
+  }, { rootMargin: '0px 0px 48px 0px' });
+
+  observer.observe(footer);
 }
 
 function initNavigation() {
@@ -1098,31 +1109,14 @@ function initSkillsCarousel() {
     dotsHTML += `<button class="carousel-dot${i === 0 ? ' active' : ''}" data-index="${i}" aria-current="${i === 0 ? 'true' : 'false'}" aria-label="${s.name} (${i + 1} de ${skills.length})"></button>`;
   });
   dotsHTML += '</div>';
-  dotsHTML += `
-    <div class="carousel-controls">
-      <button class="carousel-btn" type="button" data-carousel="prev" aria-label="Habilidad anterior">&#8592;</button>
-      <button class="carousel-btn" type="button" data-carousel="pause" aria-pressed="false" aria-label="Pausar cambio automático">&#10074;&#10074;</button>
-      <button class="carousel-btn" type="button" data-carousel="next" aria-label="Habilidad siguiente">&#8594;</button>
-    </div>`;
 
   container.innerHTML = slidesHTML + dotsHTML;
 
   const slides = container.querySelectorAll('.carousel-slide');
   const dots = container.querySelectorAll('.carousel-dot');
-  const prevBtn = container.querySelector('[data-carousel="prev"]');
-  const nextBtn = container.querySelector('[data-carousel="next"]');
-  const pauseBtn = container.querySelector('[data-carousel="pause"]');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let current = 0;
   let interval = null;
-  let userPaused = reduceMotion.matches;
-
-  function setPauseUI() {
-    if (!pauseBtn) return;
-    pauseBtn.setAttribute('aria-pressed', String(userPaused));
-    pauseBtn.setAttribute('aria-label', userPaused ? 'Reanudar cambio automático' : 'Pausar cambio automático');
-    pauseBtn.innerHTML = userPaused ? '&#9654;' : '&#10074;&#10074;';
-  }
 
   function goTo(index) {
     if (index === current) return;
@@ -1141,14 +1135,10 @@ function initSkillsCarousel() {
     goTo((current + 1) % slides.length);
   }
 
-  function prev() {
-    goTo((current - 1 + slides.length) % slides.length);
-  }
-
   function start() {
     stop();
-    if (userPaused || reduceMotion.matches) return;
-    interval = setInterval(next, 3500);
+    if (reduceMotion.matches) return;
+    interval = setInterval(next, 3000);
   }
 
   function stop() {
@@ -1160,56 +1150,42 @@ function initSkillsCarousel() {
     dot.addEventListener('click', () => {
       const idx = parseInt(dot.dataset.index, 10);
       goTo(idx);
-      start();
+      syncAutoplay();
     });
   });
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      prev();
-      start();
-    });
-  }
+  let inView = true;
+  let hovering = false;
+  let focused = false;
 
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      next();
-      start();
-    });
-  }
-
-  if (pauseBtn) {
-    pauseBtn.addEventListener('click', () => {
-      userPaused = !userPaused;
-      setPauseUI();
-      if (userPaused) stop();
-      else start();
-    });
-  }
-
-  container.addEventListener('mouseenter', stop);
-  container.addEventListener('mouseleave', start);
-  container.addEventListener('focusin', stop);
-  container.addEventListener('focusout', (e) => {
-    if (!container.contains(e.relatedTarget)) start();
-  });
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) stop();
+  function syncAutoplay() {
+    if (document.hidden || !inView || hovering || focused) stop();
     else start();
+  }
+
+  container.addEventListener('mouseenter', () => { hovering = true; syncAutoplay(); });
+  container.addEventListener('mouseleave', () => { hovering = false; syncAutoplay(); });
+  container.addEventListener('focusin', () => { focused = true; syncAutoplay(); });
+  container.addEventListener('focusout', (e) => {
+    if (!container.contains(e.relatedTarget)) { focused = false; syncAutoplay(); }
   });
+
+  /* Pausa silenciosa: sin botones visibles, el carrusel no avanza
+     mientras está fuera de pantalla (compensación de WCAG 2.2.2). */
+  if ('IntersectionObserver' in window) {
+    const visibility = new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting && entry.intersectionRatio >= 0.25;
+      syncAutoplay();
+    }, { threshold: [0, 0.25] });
+    visibility.observe(container);
+  }
+
+  document.addEventListener('visibilitychange', syncAutoplay);
 
   if (typeof reduceMotion.addEventListener === 'function') {
-    reduceMotion.addEventListener('change', () => {
-      if (reduceMotion.matches) {
-        userPaused = true;
-        setPauseUI();
-        stop();
-      }
-    });
+    reduceMotion.addEventListener('change', syncAutoplay);
   }
 
-  setPauseUI();
   start();
 }
 
