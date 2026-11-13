@@ -1333,7 +1333,18 @@ footer {
   }
   
   .footer-inner {
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .social-links {
+    order: 2;
+  }
+
+  .footer-copy {
+    order: 3;
+    width: 100%;
     text-align: center;
   }
   
