@@ -16,6 +16,7 @@ const PARTIALS = {
         <li><a href="index.html" class="nav-link" data-page="index">Inicio</a></li>
         <li><a href="servicios.html" class="nav-link" data-page="servicios">Servicios</a></li>
         <li><a href="skills.html" class="nav-link" data-page="skills">Skills</a></li>
+        <li><a href="https://idroj001.github.io/DrCode-landing/" class="nav-link">Landing</a></li>
         <li><a href="contacto.html" class="nav-link" data-page="contacto">Contacto</a></li>
         <li><a href="calendario.html" class="nav-link nav-cta" data-page="calendario">Agendamiento</a></li>
       </ul>
