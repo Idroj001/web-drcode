@@ -1197,7 +1197,7 @@ footer {
   justify-content: center;
   z-index: 100;
   box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.2s ease, bottom 0.3s ease;
 }
 .whatsapp-float:hover {
   transform: scale(1.1);
@@ -1213,12 +1213,6 @@ footer {
   height: 28px;
   fill: var(--white);
   display: block;
-}
-.whatsapp-float--above {
-  transform: translateY(-80px);
-}
-.whatsapp-float--above:hover {
-  transform: translateY(-80px) scale(1.1);
 }
 
 .theme-toggle-float {
@@ -1236,7 +1230,7 @@ footer {
   z-index: 100;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 127, 79, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.2s ease, background-color 0.3s ease, bottom 0.3s ease;
 }
 .theme-toggle-float:hover {
   transform: scale(1.1);
@@ -1255,12 +1249,10 @@ footer {
   stroke-linejoin: round;
   display: block;
 }
-.theme-toggle-float--above {
-  transform: translateY(-80px);
-}
-.theme-toggle-float--above:hover {
-  transform: translateY(-80px) scale(1.1);
-}
+
+/* Los flotantes se detienen antes del footer en cualquier viewport;
+   syncFloatsWithFooter() fija su `bottom` por encima del borde del footer. */
+
 @media (max-width: 480px) {
   .whatsapp-float {
     width: 48px;
@@ -1272,9 +1264,6 @@ footer {
     width: 24px;
     height: 24px;
   }
-  .whatsapp-float--above {
-    transform: translateY(-64px);
-  }
   .theme-toggle-float {
     width: 48px;
     height: 48px;
@@ -1284,9 +1273,6 @@ footer {
   .theme-toggle-float svg {
     width: 24px;
     height: 24px;
-  }
-  .theme-toggle-float--above {
-    transform: translateY(-64px);
   }
 }
 

@@ -56,4 +56,32 @@ test.describe('botones flotantes', () => {
     await expect(page.locator('.whatsapp-float')).not.toHaveClass(/whatsapp-float--above/);
     await expect(page.locator('.theme-toggle-float')).not.toHaveClass(/theme-toggle-float--above/);
   });
+
+  test('en móvil los flotantes quedan fuera del footer', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 667 });
+    await gotoReady(page, '/index.html');
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+
+    await expect(page.locator('.whatsapp-float')).toHaveClass(/whatsapp-float--above/);
+    await expect(page.locator('.theme-toggle-float')).toHaveClass(/theme-toggle-float--above/);
+
+    const whatsapp = await page.locator('.whatsapp-float').boundingBox();
+    const theme = await page.locator('.theme-toggle-float').boundingBox();
+    const footerBox = await page.locator('footer').boundingBox();
+
+    expect(Math.round(whatsapp.y + whatsapp.height))
+      .toBeLessThanOrEqual(Math.round(footerBox.y));
+    expect(Math.round(theme.y + theme.height))
+      .toBeLessThanOrEqual(Math.round(footerBox.y));
+  });
+
+  test('los flotantes no se superponen entre sí en móvil angosto', async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 568 });
+    await gotoReady(page, '/index.html');
+
+    const whatsapp = await page.locator('.whatsapp-float').boundingBox();
+    const theme = await page.locator('.theme-toggle-float').boundingBox();
+
+    expect(Math.round(theme.x + theme.width)).toBeLessThanOrEqual(Math.round(whatsapp.x));
+  });
 });

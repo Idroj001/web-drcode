@@ -367,7 +367,8 @@ function injectWhatsAppFloat() {
 }
 
 /* Ambos flotantes suben juntos al llegar al footer: misma altura,
-   mismo desplazamiento y mismo punto de parada. */
+   mismo desplazamiento y mismo punto de parada. El levantamiento se
+   calcula del alto real del footer (varía entre desktop y móvil). */
 function syncFloatsWithFooter() {
   const floats = [
     { el: document.querySelector('.whatsapp-float'), cls: 'whatsapp-float--above' },
@@ -377,11 +378,26 @@ function syncFloatsWithFooter() {
   const footer = document.querySelector('#footer-container footer');
   if (!footer || !floats.length) return;
 
+  let overFooter = false;
+
+  const applyLift = () => {
+    const bottom = overFooter ? `${footer.offsetHeight + 16}px` : '';
+    floats.forEach(({ el, cls }) => {
+      el.classList.toggle(cls, overFooter);
+      el.style.bottom = bottom;
+    });
+  };
+
   const observer = new IntersectionObserver(([entry]) => {
-    floats.forEach(({ el, cls }) => el.classList.toggle(cls, entry.isIntersecting));
+    overFooter = entry.isIntersecting;
+    applyLift();
   }, { rootMargin: '0px 0px 48px 0px' });
 
   observer.observe(footer);
+
+  window.addEventListener('resize', () => {
+    if (overFooter) applyLift();
+  });
 }
 
 function initNavigation() {
