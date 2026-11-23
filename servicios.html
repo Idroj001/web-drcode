@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Servicios - {Dr.Code}</title>
   <meta name="description" content="Servicios digitales de {Dr.Code}: páginas web, landing pages, carritos de compras, menús digitales, tarjetas de presentación y automatizaciones.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{Dr.Code}">
+  <meta property="og:title" content="Servicios - {Dr.Code}">
+  <meta property="og:description" content="Páginas web, landing pages, carritos, menús digitales, tarjetas y automatizaciones. Precios de lanzamiento y entrega en 2–3 días hábiles.">
+  <meta property="og:url" content="https://idroj001.github.io/web-drcode/servicios.html">
+  <link rel="canonical" href="https://idroj001.github.io/web-drcode/servicios.html">
+  <meta property="og:image" content="https://idroj001.github.io/web-drcode/assets/og-image.jpg">
+  <meta property="og:image:alt" content="Logotipo de {Dr.Code} sobre fondo oscuro: Soluciones digitales para tu negocio">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_EC">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://idroj001.github.io/web-drcode/assets/og-image.jpg">
   <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script>
@@ -27,114 +40,433 @@
 
   <main id="main" tabindex="-1">
     <div class="container">
-      <section class="section">
-        <h1 style="text-align: center; margin-bottom: 1rem;">Nuestros Servicios</h1>
-        <p class="hero-subtitle" style="text-align: center;">
-          Soluciones digitales adaptadas a tus necesidades. Cada proyecto es único, por eso trabajamos para transformar tu visión en realidad.
+      <section class="section" id="servicios">
+        <h1 class="section-title">Mis Servicios</h1>
+        <p class="section-lead">
+          Soluciones digitales adaptadas a tus necesidades. Cada proyecto es único, por eso trabajo para transformar tu visión en realidad.
         </p>
-        
-        <div class="services-grid">
-          <div class="card service-card service-card--detailed">
-            <a href="demo-web.html" class="service-preview" aria-label="Ver demo de Páginas Web">
-              <img src="assets/previews/pagina-web.svg" alt="Vista previa de una página web" width="400" height="260">
-            </a>
-            <div class="service-body">
-              <span class="service-icon"><i class="fa-solid fa-globe"></i></span>
-              <h3 class="service-title">Páginas Web</h3>
-              <p class="service-desc">Sitios web profesionales con diseño responsivo, optimizados para SEO y conversión. Ideal para negocios que quieren presencia seria en internet.</p>
-              <div class="service-actions">
-                <button class="btn btn-primary" onclick="openModalFor('web')">Solicitar</button>
-                <a href="demo-web.html" class="btn btn-secondary">Ver demo</a>
-              </div>
+
+        <div class="term-panels">
+          <div class="term-panel term-panel--wide">
+            <div class="term-caption">
+              <span class="term-caption-title">[ webs-estaticas ]</span>
+              <span class="term-badge">LANZAMIENTO 75% OFF</span>
             </div>
+            <p class="term-desc">&gt; sitios rápidos, sin base de datos, publicados en días</p>
+            <ul class="term-list">
+              <li>
+                <div class="term-entry">
+                  <div class="term-row">
+                    <div class="term-item">
+                      <span class="term-name">landing-page-simple</span>
+                      <span class="term-leader" aria-hidden="true"></span>
+                      <s class="term-price-old">$80</s>
+                      <span class="term-price-arrow" aria-hidden="true">&rarr;</span>
+                      <span class="term-price">$20</span>
+                    </div>
+                    <button class="term-cta" type="button" onclick="openModalFor('landing')">Solicitar</button>
+                    <button class="term-toggle" type="button" aria-expanded="false" aria-controls="svc-landing" aria-label="Ver detalles de landing page simple" data-service="landing page simple">
+                      <span aria-hidden="true">+</span>
+                    </button>
+                  </div>
+                  <div class="term-more" id="svc-landing" hidden>
+                    <p class="term-more-desc">Una sola página con portada, tus servicios, testimonios y botón directo a WhatsApp. Queda publicada y lista para recibir mensajes desde el primer día.</p>
+                    <p class="term-more-meta">Precio fijo · sin mensualidades</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="term-entry">
+                  <div class="term-row">
+                    <div class="term-item">
+                      <span class="term-name">web-corporativa</span>
+                      <span class="term-leader" aria-hidden="true"></span>
+                      <s class="term-price-old">$120</s>
+                      <span class="term-price-arrow" aria-hidden="true">&rarr;</span>
+                      <span class="term-price">$30</span>
+                    </div>
+                    <button class="term-cta" type="button" onclick="openModalFor('web')">Solicitar</button>
+                    <button class="term-toggle" type="button" aria-expanded="false" aria-controls="svc-corporativa" aria-label="Ver detalles de web corporativa" data-service="web corporativa">
+                      <span aria-hidden="true">+</span>
+                    </button>
+                  </div>
+                  <div class="term-more" id="svc-corporativa" hidden>
+                    <p class="term-more-desc">De 3 a 5 páginas con tu logo, fotos, servicios y formulario de contacto. Tu empresa deja de depender de las redes y se ve profesional en Google.</p>
+                    <p class="term-more-meta">Precio fijo · sin mensualidades</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="term-entry">
+                  <div class="term-row">
+                    <div class="term-item">
+                      <span class="term-name">catalogo-whatsapp</span>
+                      <span class="term-leader" aria-hidden="true"></span>
+                      <s class="term-price-old">$80</s>
+                      <span class="term-price-arrow" aria-hidden="true">&rarr;</span>
+                      <span class="term-price">$20</span>
+                    </div>
+                    <button class="term-cta" type="button" onclick="openModalFor('carrito')">Solicitar</button>
+                    <button class="term-toggle" type="button" aria-expanded="false" aria-controls="svc-catalogo" aria-label="Ver detalles de catálogo WhatsApp" data-service="catálogo WhatsApp">
+                      <span aria-hidden="true">+</span>
+                    </button>
+                  </div>
+                  <div class="term-more" id="svc-catalogo" hidden>
+                    <p class="term-more-desc">Tus productos con fotos, precios y categorías en un catálogo en línea; el cliente arma el pedido y te llega por WhatsApp. Incluye buscador por categorías y botón de pedido en cada producto.</p>
+                    <p class="term-more-meta">Precio fijo · sin mensualidades</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="term-entry">
+                  <div class="term-row">
+                    <div class="term-item">
+                      <span class="term-name">tarjeta-digital</span>
+                      <span class="term-leader" aria-hidden="true"></span>
+                      <s class="term-price-old">$80</s>
+                      <span class="term-price-arrow" aria-hidden="true">&rarr;</span>
+                      <span class="term-price">$20</span>
+                    </div>
+                    <button class="term-cta" type="button" onclick="openModalFor('tarjeta')">Solicitar</button>
+                    <button class="term-toggle" type="button" aria-expanded="false" aria-controls="svc-tarjeta" aria-label="Ver detalles de tarjeta digital" data-service="tarjeta digital">
+                      <span aria-hidden="true">+</span>
+                    </button>
+                  </div>
+                  <div class="term-more" id="svc-tarjeta" hidden>
+                    <p class="term-more-desc">Tus datos, redes, servicios y WhatsApp en un solo enlace con código QR. La compartes por chat o la imprimes, y quien la escanee te escribe sin guardar tu número.</p>
+                    <p class="term-more-meta">Precio fijo · sin mensualidades</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="term-entry">
+                  <div class="term-row">
+                    <div class="term-item">
+                      <span class="term-name">menu-digital</span>
+                      <span class="term-leader" aria-hidden="true"></span>
+                      <s class="term-price-old">$80</s>
+                      <span class="term-price-arrow" aria-hidden="true">&rarr;</span>
+                      <span class="term-price">$20</span>
+                    </div>
+                    <button class="term-cta" type="button" onclick="openModalFor('menu')">Solicitar</button>
+                    <button class="term-toggle" type="button" aria-expanded="false" aria-controls="svc-menu" aria-label="Ver detalles de menú digital" data-service="menú digital">
+                      <span aria-hidden="true">+</span>
+                    </button>
+                  </div>
+                  <div class="term-more" id="svc-menu" hidden>
+                    <p class="term-more-desc">Tu carta con fotos, precios y categorías en un enlace con QR para cada mesa. Actualizo platos o precios cuando cambien, sin reimprimir nada.</p>
+                    <p class="term-more-meta">Precio fijo · sin mensualidades</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
 
-          <div class="card service-card service-card--detailed">
-            <a href="https://idroj001.github.io/DrCode-landing/" target="_blank" rel="noopener" class="service-preview" aria-label="Ver demo de Landing Pages">
-              <img src="assets/previews/landing.svg" alt="Vista previa de una landing page" width="400" height="260">
-            </a>
-            <div class="service-body">
-              <span class="service-icon"><i class="fa-solid fa-mobile-screen"></i></span>
-              <h3 class="service-title">Landing Pages</h3>
-              <p class="service-desc">Páginas de aterrizaje enfocadas en conversión. Perfectas para campañas publicitarias, lanzamientos de productos o servicios específicos.</p>
-              <div class="service-actions">
-                <button class="btn btn-primary" onclick="openModalFor('landing')">Solicitar</button>
-                <a href="https://idroj001.github.io/DrCode-landing/" target="_blank" rel="noopener" class="btn btn-secondary">Ver demo</a>
-              </div>
+          <div class="term-panel term-panel--wide">
+            <div class="term-caption">
+              <span class="term-caption-title">[ webs-dinamicas ]</span>
+              <span class="term-badge">LANZAMIENTO 75% OFF</span>
             </div>
+            <p class="term-desc">&gt; tus datos en la nube, disponibles desde cualquier dispositivo</p>
+            <ul class="term-list">
+              <li>
+                <div class="term-entry">
+                  <div class="term-row">
+                    <div class="term-item">
+                      <span class="term-name">web-de-estudios</span>
+                      <span class="term-leader" aria-hidden="true"></span>
+                      <s class="term-price-old">$120</s>
+                      <span class="term-price-arrow" aria-hidden="true">&rarr;</span>
+                      <span class="term-price">$30</span>
+                    </div>
+                    <button class="term-cta" type="button" onclick="openModalFor('estudios')">Solicitar</button>
+                    <button class="term-toggle" type="button" aria-expanded="false" aria-controls="svc-estudios" aria-label="Ver detalles de web de estudios" data-service="web de estudios">
+                      <span aria-hidden="true">+</span>
+                    </button>
+                  </div>
+                  <div class="term-more" id="svc-estudios" hidden>
+                    <p class="term-more-desc">Apuntes, tareas, horarios y fechas de examen en un panel personal guardado en la nube. Entras desde el celular o la computadora y todo sigue ahí.</p>
+                    <p class="term-more-meta">Precio fijo · sin mensualidades</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="term-entry">
+                  <div class="term-row">
+                    <div class="term-item">
+                      <span class="term-name">finanzas-personales</span>
+                      <span class="term-leader" aria-hidden="true"></span>
+                      <s class="term-price-old">$120</s>
+                      <span class="term-price-arrow" aria-hidden="true">&rarr;</span>
+                      <span class="term-price">$30</span>
+                    </div>
+                    <button class="term-cta" type="button" onclick="openModalFor('finanzas')">Solicitar</button>
+                    <button class="term-toggle" type="button" aria-expanded="false" aria-controls="svc-finanzas" aria-label="Ver detalles de finanzas personales" data-service="finanzas personales">
+                      <span aria-hidden="true">+</span>
+                    </button>
+                  </div>
+                  <div class="term-more" id="svc-finanzas" hidden>
+                    <p class="term-more-desc">Registra ingresos y gastos por categoría y mira tu saldo con gráficos claros. Funciona en cualquier dispositivo y te muestra en qué se te va el dinero.</p>
+                    <p class="term-more-meta">Precio fijo · sin mensualidades</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="term-entry">
+                  <div class="term-row">
+                    <div class="term-item">
+                      <span class="term-name">gestion-profesional</span>
+                      <span class="term-leader" aria-hidden="true"></span>
+                      <s class="term-price-old">$120</s>
+                      <span class="term-price-arrow" aria-hidden="true">&rarr;</span>
+                      <span class="term-price">$30</span>
+                    </div>
+                    <button class="term-cta" type="button" onclick="openModalFor('gestion')">Solicitar</button>
+                    <button class="term-toggle" type="button" aria-expanded="false" aria-controls="svc-gestion" aria-label="Ver detalles de gestión profesional" data-service="gestión profesional">
+                      <span aria-hidden="true">+</span>
+                    </button>
+                  </div>
+                  <div class="term-more" id="svc-gestion" hidden>
+                    <p class="term-more-desc">Clientes, inventario, citas y pagos en un solo panel privado. Dejas las hojas de cálculo y ves el estado de tu negocio de un vistazo.</p>
+                    <p class="term-more-meta">Precio fijo · sin mensualidades</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="term-entry">
+                  <div class="term-row">
+                    <div class="term-item">
+                      <span class="term-name">dashboard-datos</span>
+                      <span class="term-leader" aria-hidden="true"></span>
+                      <s class="term-price-old">$120</s>
+                      <span class="term-price-arrow" aria-hidden="true">&rarr;</span>
+                      <span class="term-price">$30</span>
+                    </div>
+                    <button class="term-cta" type="button" onclick="openModalFor('dashboard')">Solicitar</button>
+                    <button class="term-toggle" type="button" aria-expanded="false" aria-controls="svc-dashboard" aria-label="Ver detalles de dashboard con datos vivos" data-service="dashboard con datos vivos">
+                      <span aria-hidden="true">+</span>
+                    </button>
+                  </div>
+                  <div class="term-more" id="svc-dashboard" hidden>
+                    <p class="term-more-desc">Conecto tus datos y armo un tablero con gráficos que se actualizan solos. Ves ventas, gastos y metas al día, sin exportar nada a mano.</p>
+                    <p class="term-more-meta">Precio fijo · sin mensualidades</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
 
-          <div class="card service-card service-card--detailed">
-            <a href="https://idroj001.github.io/catalogo-drcode/" target="_blank" rel="noopener" class="service-preview" aria-label="Ver demo de Carritos de Compras">
-              <img src="assets/previews/carrito.svg" alt="Vista previa de un carrito de compras" width="400" height="260" loading="lazy">
-            </a>
-            <div class="service-body">
-              <span class="service-icon"><i class="fa-solid fa-cart-shopping"></i></span>
-              <h3 class="service-title">Carritos de Compras</h3>
-              <p class="service-desc">Tienda online que conecta directamente con WhatsApp. Tus clientes seleccionan productos y reciben el pedido en su celular listo para comprar.</p>
-              <div class="service-actions">
-                <button class="btn btn-primary" onclick="openModalFor('carrito')">Solicitar</button>
-                <a href="https://idroj001.github.io/catalogo-drcode/" target="_blank" rel="noopener" class="btn btn-secondary">Ver demo</a>
+          <article class="term-panel term-panel--single">
+            <div class="term-caption">
+              <span class="term-caption-title">[ chatbot-whatsapp ]</span>
+              <div class="term-caption-actions">
+                <span class="term-badge">LANZAMIENTO 75% OFF</span>
+                <button class="term-cta" type="button" onclick="openModalFor('chatbot')">Solicitar</button>
+                <button class="term-toggle" type="button" aria-expanded="false" aria-controls="svc-chatbot" aria-label="Ver detalles de chatbot WhatsApp" data-service="chatbot WhatsApp">
+                  <span aria-hidden="true">+</span>
+                </button>
               </div>
             </div>
-          </div>
+            <div class="term-more" id="svc-chatbot" hidden>
+              <p class="term-more-desc">Responde tus preguntas frecuentes, muestra precios y agenda citas las 24 horas. Atiende aunque estés ocupado y te pasa clientes listos para comprar.</p>
+              <p class="term-more-meta">Precio fijo · sin mensualidades</p>
+            </div>
+            <div class="term-single-footer">
+              <span class="term-name">chatbot-whatsapp</span>
+              <span class="term-leader" aria-hidden="true"></span>
+              <s class="term-price-old">$80</s>
+              <span class="term-price-arrow" aria-hidden="true">&rarr;</span>
+              <span class="term-price">$20</span>
+            </div>
+          </article>
 
-          <div class="card service-card service-card--detailed">
-            <a href="demo-menu.html" class="service-preview" aria-label="Ver demo de Menús Digitales">
-              <img src="assets/previews/menu.svg" alt="Vista previa de un menú digital" width="400" height="260" loading="lazy">
-            </a>
-            <div class="service-body">
-              <span class="service-icon"><i class="fa-solid fa-clipboard-list"></i></span>
-              <h3 class="service-title">Menús Digitales</h3>
-              <p class="service-desc">Menú interactivo accesible por código QR. Actualiza precios y platillos fácilmente desde tu panel de control. Ideal para restaurantes.</p>
-              <div class="service-actions">
-                <button class="btn btn-primary" onclick="openModalFor('menu')">Solicitar</button>
-                <a href="demo-menu.html" class="btn btn-secondary">Ver demo</a>
+          <article class="term-panel term-panel--single">
+            <div class="term-caption">
+              <span class="term-caption-title">[ automatizaciones ]</span>
+              <div class="term-caption-actions">
+                <span class="term-badge">LANZAMIENTO 75% OFF</span>
+                <button class="term-cta" type="button" onclick="openModalFor('automatizacion')">Solicitar</button>
+                <button class="term-toggle" type="button" aria-expanded="false" aria-controls="svc-automatizaciones" aria-label="Ver detalles de automatizaciones" data-service="automatizaciones">
+                  <span aria-hidden="true">+</span>
+                </button>
               </div>
             </div>
-          </div>
+            <div class="term-more" id="svc-automatizaciones" hidden>
+              <p class="term-more-desc">Flujos que hacen lo repetitivo por ti: enviar correos, guardar pedidos, avisar por WhatsApp o mover datos entre apps. Recuperas horas cada semana y reduces errores.</p>
+              <p class="term-more-meta">Precio fijo · sin mensualidades</p>
+            </div>
+            <div class="term-single-footer">
+              <span class="term-name">automatizaciones</span>
+              <span class="term-leader" aria-hidden="true"></span>
+              <s class="term-price-old">$120</s>
+              <span class="term-price-arrow" aria-hidden="true">&rarr;</span>
+              <span class="term-price">$30</span>
+            </div>
+          </article>
+        </div>
 
-          <div class="card service-card service-card--detailed">
-            <a href="https://idroj001.github.io/tarjeta-drcode/" target="_blank" rel="noopener" class="service-preview" aria-label="Ver demo de Tarjetas de Presentación">
-              <img src="assets/previews/tarjeta.svg" alt="Vista previa de una tarjeta de presentación digital" width="400" height="260" loading="lazy">
-            </a>
-            <div class="service-body">
-              <span class="service-icon"><i class="fa-solid fa-credit-card"></i></span>
-              <h3 class="service-title">Tarjetas de Presentación</h3>
-              <p class="service-desc">Tarjeta digital profesional que se comparte por QR o enlace. Incluye tu información de contacto, servicios, redes sociales y más.</p>
-              <div class="service-actions">
-                <button class="btn btn-primary" onclick="openModalFor('tarjeta')">Solicitar</button>
-                <a href="https://idroj001.github.io/tarjeta-drcode/" target="_blank" rel="noopener" class="btn btn-secondary">Ver demo</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="card service-card service-card--detailed">
-            <a href="demo-automatizacion.html" class="service-preview" aria-label="Ver demo de Automatizaciones">
-              <img src="assets/previews/automatizacion.svg" alt="Vista previa de una automatización" width="400" height="260" loading="lazy">
-            </a>
-            <div class="service-body">
-              <span class="service-icon"><i class="fa-solid fa-robot"></i></span>
-              <h3 class="service-title">Automatizaciones</h3>
-              <p class="service-desc">Automatizamos procesos de tu negocio: respuestas automáticas en WhatsApp, confirmación de citas, notificaciones y más flujos de trabajo.</p>
-              <div class="service-actions">
-                <button class="btn btn-primary" onclick="openModalFor('automatizacion')">Solicitar</button>
-                <a href="demo-automatizacion.html" class="btn btn-secondary">Ver demo</a>
-              </div>
-            </div>
-          </div>
+        <div class="includes">
+          <h2 class="includes-title">¿Qué incluye el precio?</h2>
+          <ul class="includes-list">
+            <li>
+              <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+              <span>Diseño y desarrollo completos, publicados y funcionando.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+              <span>SEO local y metadatos: apareces en Google con tu ciudad, teléfono y horarios.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+              <span>Certificado SSL incluido (HTTPS).</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+              <span>Manual de uso para que cambies textos, fotos y precios sin depender de mí.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+              <span>Código QR de tu URL, listo para imprimir o compartir.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+              <span>Todos tus archivos y credenciales enviados a tu correo.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+              <span>Precio único: sin mensualidades ni cargos ocultos.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+              <span>Ajustes incluidos después de la entrega.</span>
+            </li>
+          </ul>
+          <p class="includes-note"><span aria-hidden="true">*</span> Precio de lanzamiento (75% OFF): incluye diseño, desarrollo y publicación. El dominio propio es opcional y se paga aparte: $20 al año.</p>
         </div>
       </section>
 
-      <section class="section" style="text-align: center; margin-top: 3rem;">
+      <section class="section" id="portafolio">
+        <h2 class="section-title">Portafolio</h2>
+        <p class="section-lead">Proyectos reales, no maquetas: ábrelos y pruébalos.</p>
+
+        <div class="work-grid">
+          <article class="work-card">
+            <div class="work-body">
+              <div class="work-head">
+                <h3 class="work-title">Landing page</h3>
+              </div>
+              <p class="work-desc">Una sola página pensada para que te escriban.</p>
+              <div class="work-actions">
+                <button type="button" class="work-demo" data-title="Landing page" data-shot-pc="assets/trabajos/landing-pc.jpg" data-shot-movil="assets/trabajos/landing-movil.jpg" aria-controls="workModal" aria-haspopup="dialog" aria-expanded="false">Vista previa</button>
+                <a class="work-link" href="https://idroj001.github.io/DrCode-landing/" target="_blank" rel="noopener">
+                  Visitar sitio
+                  <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-body">
+              <div class="work-head">
+                <h3 class="work-title">Web corporativa</h3>
+              </div>
+              <p class="work-desc">De 3 a 5 páginas con tus servicios y tu contacto.</p>
+              <div class="work-actions">
+                <button type="button" class="work-demo" data-title="Web corporativa" data-shot-pc="assets/trabajos/web-pc.jpg" data-shot-movil="assets/trabajos/web-movil.jpg" aria-controls="workModal" aria-haspopup="dialog" aria-expanded="false">Vista previa</button>
+                <a class="work-link" href="index.html">
+                  Visitar sitio
+                  <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-body">
+              <div class="work-head">
+                <h3 class="work-title">Catálogo de compras</h3>
+              </div>
+              <p class="work-desc">Un catálogo con precios fijos y carrito que arma el pedido.</p>
+              <div class="work-actions">
+                <button type="button" class="work-demo" data-title="Catálogo de compras" data-shot-pc="assets/trabajos/catalogo-pc.jpg" data-shot-movil="assets/trabajos/catalogo-movil.jpg" aria-controls="workModal" aria-haspopup="dialog" aria-expanded="false">Vista previa</button>
+                <a class="work-link" href="https://idroj001.github.io/catalogo-drcode/" target="_blank" rel="noopener">
+                  Visitar sitio
+                  <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-body">
+              <div class="work-head">
+                <h3 class="work-title">Tarjeta digital</h3>
+              </div>
+              <p class="work-desc">Tu presentación con QR, compartible en un enlace.</p>
+              <div class="work-actions">
+                <button type="button" class="work-demo" data-title="Tarjeta digital" data-shot-pc="assets/trabajos/tarjeta-pc.jpg" data-shot-movil="assets/trabajos/tarjeta-movil.jpg" aria-controls="workModal" aria-haspopup="dialog" aria-expanded="false">Vista previa</button>
+                <a class="work-link" href="https://idroj001.github.io/tarjeta-drcode/" target="_blank" rel="noopener">
+                  Visitar sitio
+                  <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-body">
+              <div class="work-head">
+                <h3 class="work-title">Agendamiento</h3>
+              </div>
+              <p class="work-desc">Tus clientes reservan su cita sin escribirte.</p>
+              <div class="work-actions">
+                <button type="button" class="work-demo" data-title="Agendamiento" data-shot-pc="assets/trabajos/agenda-pc.jpg" data-shot-movil="assets/trabajos/agenda-movil.jpg" aria-controls="workModal" aria-haspopup="dialog" aria-expanded="false">Vista previa</button>
+                <a class="work-link" href="calendario.html">
+                  Visitar sitio
+                  <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-body">
+              <div class="work-head">
+                <h3 class="work-title">Panel de gestión <span class="work-tag">interno</span></h3>
+              </div>
+              <p class="work-desc">Clientes, tareas y presupuestos en un solo panel.</p>
+              <div class="work-actions">
+                <button type="button" class="work-demo" data-title="Panel de gestión" data-shot-pc="assets/trabajos/dashboard-pc.jpg" data-shot-movil="assets/trabajos/dashboard-movil.jpg" aria-controls="workModal" aria-haspopup="dialog" aria-expanded="false">Vista previa</button>
+                <span class="work-link work-link--muted">Proyecto interno</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="work-note">Menú digital, web de estudios, finanzas personales, chatbot WhatsApp y automatizaciones: muestras en preparación.</p>
+      </section>
+
+      <section class="section" style="text-align: center;">
         <h2>¿Necesitas algo personalizado?</h2>
-        <p style="margin-bottom: 1.5rem;">Contáctanos y diseñamos la solución perfecta para tu negocio.</p>
+        <p style="margin-bottom: 1.5rem;">Contáctame y diseño la solución perfecta para tu negocio.</p>
         <a href="contacto.html" class="btn btn-primary">Contactar</a>
       </section>
     </div>
   </main>
 
   <div id="modal-container"></div>
+
+  <div class="work-modal" id="workModal" aria-hidden="true">
+    <div class="work-modal-backdrop"></div>
+    <div class="work-modal-dialog" role="dialog" aria-modal="true" aria-label="Vista previa del proyecto" tabindex="-1">
+      <button type="button" class="work-modal-close" aria-label="Cerrar vista previa">
+        <svg viewBox="0 0 384 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+      </button>
+      <img class="work-modal-img work-modal-img--pc" alt="" width="800" height="500" decoding="async">
+      <img class="work-modal-img work-modal-img--movil" alt="" width="300" height="650" decoding="async">
+    </div>
+  </div>
 
   <div id="footer-container"></div>
 

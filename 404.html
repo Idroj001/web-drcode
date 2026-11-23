@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página no encontrada - {Dr.Code}</title>
+  <meta name="description" content="La página que buscas no existe. Vuelve al inicio de {Dr.Code}.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('drcode_theme');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <canvas id="matrix"></canvas>
+
+  <div id="header-container"></div>
+
+  <main id="main" tabindex="-1">
+    <div class="container">
+      <section class="section-full" style="text-align: center;">
+        <p class="section-title" aria-hidden="true" style="font-size: clamp(3rem, 12vw, 7rem); margin-bottom: 0.5rem;">404</p>
+        <h1>Esta página no existe</h1>
+        <p class="section-lead" style="margin: 1rem auto 2rem;">
+          Puede que el enlace esté mal escrito o que la página se haya movido. Te llevo de vuelta al inicio.
+        </p>
+        <div class="hero-cta">
+          <a href="index.html" class="btn btn-primary"><i class="fa-solid fa-house"></i> Ir al inicio</a>
+          <a href="servicios.html" class="btn btn-secondary">Ver servicios</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/canvas.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

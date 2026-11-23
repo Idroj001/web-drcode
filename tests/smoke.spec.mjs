@@ -66,14 +66,26 @@ test.describe('estructura compartida', () => {
     await expect(page.locator('#contactModal')).toHaveCount(0);
   });
 
-  test('servicios.html no repite la llamada "Ver demo"', async ({ page }) => {
+  test('servicios.html muestra paneles de precios y portafolio sin duplicar CTAs', async ({ page }) => {
     await gotoReady(page, '/servicios.html');
 
-    await expect(page.locator('.service-card--detailed')).toHaveCount(6);
-    await expect(page.locator('.service-preview')).toHaveCount(6);
-    await expect(page.locator('.service-preview').first()).toHaveAttribute('href', 'demo-web.html');
-    await expect(page.locator('.service-badge')).toHaveCount(0);
-    await expect(page.getByRole('link', { name: 'Ver demo', exact: true })).toHaveCount(6);
+    await expect(page.locator('.term-panel')).toHaveCount(4);
+    await expect(page.locator('.term-cta')).toHaveCount(11);
+    await expect(page.locator('.work-card')).toHaveCount(6);
+    await expect(page.getByRole('button', { name: 'Vista previa' })).toHaveCount(6);
+    await expect(page.getByRole('link', { name: 'Visitar sitio' })).toHaveCount(5);
+    await expect(page.getByRole('link', { name: 'Ver demo', exact: true })).toHaveCount(0);
+  });
+
+  test('404.html carga con la estructura compartida y vuelve al inicio', async ({ page }) => {
+    await gotoReady(page, '/404.html');
+
+    await expect(page.locator('h1')).toContainText('no existe');
+    await expect(page.locator('footer')).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Ir al inicio' })).toHaveAttribute(
+      'href',
+      'index.html',
+    );
   });
 
   test('las páginas demo cargan y marcan Servicios como activo', async ({ page }) => {

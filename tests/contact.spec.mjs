@@ -50,11 +50,11 @@ test.describe('modal de solicitud', () => {
     page,
   }) => {
     await gotoReady(page, '/servicios.html');
-    const opener = page.locator('.service-card').first().locator('button', { hasText: 'Solicitar' });
+    const opener = page.locator('.term-cta').first();
 
     await opener.click();
     await expect(page.locator('#contactModal')).toHaveClass(/open/);
-    await expect(page.locator('#service')).toHaveValue('web');
+    await expect(page.locator('#service')).toHaveValue('landing');
     await expect(page.locator('#name')).toBeFocused();
 
     await page.keyboard.press('Escape');
@@ -64,7 +64,7 @@ test.describe('modal de solicitud', () => {
 
   test('al reabrir el modal el formulario está vacío', async ({ page }) => {
     await gotoReady(page, '/servicios.html');
-    const opener = page.locator('.service-card').first().locator('button', { hasText: 'Solicitar' });
+    const opener = page.locator('.term-cta').first();
 
     await opener.click();
     await page.fill('#name', 'Texto temporal');
@@ -76,7 +76,7 @@ test.describe('modal de solicitud', () => {
 
   test('valida los campos obligatorios antes de abrir WhatsApp', async ({ page }) => {
     await gotoReady(page, '/servicios.html');
-    await page.locator('.service-card').first().locator('button', { hasText: 'Solicitar' }).click();
+    await page.locator('.term-cta').first().click();
 
     await page.locator('#contactModal button[type="submit"]').click();
 
@@ -87,7 +87,7 @@ test.describe('modal de solicitud', () => {
 
   test('envía la solicitud desde el modal', async ({ page }) => {
     await gotoReady(page, '/servicios.html');
-    const opener = page.locator('.service-card').first().locator('button', { hasText: 'Solicitar' });
+    const opener = page.locator('.term-cta').first();
     await opener.click();
 
     await page.fill('#name', 'Luis Vera');
@@ -98,7 +98,7 @@ test.describe('modal de solicitud', () => {
 
     const text = await openedWhatsAppText(page);
     expect(text).toContain('*Nombre:* Luis Vera');
-    expect(text).toContain('*Servicio:* Página Web');
+    expect(text).toContain('*Servicio:* Landing Page');
     expect(text).toContain('*Mensaje:* Quiero una landing');
     await expect(page.locator('#contactModal')).not.toHaveClass(/open/);
     await expect(opener).toBeFocused();

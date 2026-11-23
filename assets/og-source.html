@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>OG card — {Dr.Code}</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: 'VT323', 'Courier New', monospace;
+    background:
+      radial-gradient(circle at 50% 38%, rgba(57, 255, 117, 0.14) 0%, rgba(14, 17, 15, 0) 58%),
+      linear-gradient(160deg, #0e110f 0%, #131815 55%, #0b0e0c 100%);
+    color: #e8ece9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    position: relative;
+  }
+  /* rejilla sutil */
+  body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(57, 255, 117, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(57, 255, 117, 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(circle at 50% 45%, #000 0%, transparent 75%);
+  }
+  /* scanlines */
+  body::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.22) 0 2px, transparent 2px 4px);
+    opacity: 0.5;
+  }
+  .frame {
+    position: absolute;
+    inset: 28px;
+    border: 1px solid rgba(57, 255, 117, 0.28);
+    border-radius: 18px;
+  }
+  .logo, .tagline, .services { position: relative; z-index: 2; text-align: center; }
+  .logo {
+    font-size: 168px;
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: #f4f6f5;
+    text-shadow: 0 0 26px rgba(57, 255, 117, 0.35);
+  }
+  .braces { color: #39ff75; text-shadow: 0 0 30px rgba(57, 255, 117, 0.85); }
+  .dot { color: #39ff75; }
+  .tagline {
+    font-size: 52px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #f4f6f5;
+  }
+  .services {
+    font-size: 30px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #39ff75;
+  }
+  .rule {
+    width: 190px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #39ff75, transparent);
+    position: relative;
+    z-index: 2;
+  }
+</style>
+</head>
+<body>
+  <div class="frame" aria-hidden="true"></div>
+  <div class="logo"><span class="braces">{</span>Dr<span class="dot">.</span>Code<span class="braces">}</span></div>
+  <div class="tagline">Soluciones digitales para tu negocio</div>
+  <div class="rule" aria-hidden="true"></div>
+  <div class="services">Webs · Landing · Catálogos · Tarjetas</div>
+</body>
+</html>

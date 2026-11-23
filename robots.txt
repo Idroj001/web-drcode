@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://idroj001.github.io/web-drcode/sitemap.xml

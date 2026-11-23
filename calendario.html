@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agendamiento - {Dr.Code}</title>
   <meta name="description" content="Agenda una cita con {Dr.Code}.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{Dr.Code}">
+  <meta property="og:title" content="Agendamiento - {Dr.Code}">
+  <meta property="og:description" content="Solicita tu cita: elige día y horario y te confirmo por WhatsApp.">
+  <meta property="og:url" content="https://idroj001.github.io/web-drcode/calendario.html">
+  <link rel="canonical" href="https://idroj001.github.io/web-drcode/calendario.html">
+  <meta property="og:image" content="https://idroj001.github.io/web-drcode/assets/og-image.jpg">
+  <meta property="og:image:alt" content="Logotipo de {Dr.Code} sobre fondo oscuro: Soluciones digitales para tu negocio">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_EC">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://idroj001.github.io/web-drcode/assets/og-image.jpg">
   <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script>
@@ -28,9 +41,9 @@
   <main id="main" tabindex="-1">
     <div class="container">
       <section class="section" style="text-align: center;">
-        <h1>Agenda una Cita</h1>
+        <h1>Solicita tu Cita</h1>
         <p class="hero-subtitle" style="text-align: center;">
-          Selecciona el día y horario que prefieras. Te contactaremos para confirmar tu cita.
+          Selecciona el día y horario que prefieras. Te contactaré para confirmar tu cita.
         </p>
 
         <p class="week-label" id="weekLabel"></p>
@@ -54,7 +67,7 @@
   <div class="modal-overlay" id="calendarModalOverlay" aria-hidden="true">
     <div class="modal" id="calendarModal" role="dialog" aria-labelledby="calModalTitle" aria-modal="true">
       <div class="modal-header">
-        <h2 class="modal-title" id="calModalTitle">Confirmar Cita</h2>
+        <h2 class="modal-title" id="calModalTitle">Solicitar Cita</h2>
         <button class="modal-close" id="calModalClose" aria-label="Cerrar">&times;</button>
       </div>
       <form class="contact-form" id="calendarForm" novalidate>
