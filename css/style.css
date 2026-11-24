@@ -577,11 +577,12 @@ footer {
   max-width: 880px;
   margin: 0 auto 2.5rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
 }
 
 .term-panel {
+  min-width: 0;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 0.5rem;
@@ -595,6 +596,7 @@ footer {
 
 .term-caption {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
@@ -632,6 +634,7 @@ footer {
 
 .term-caption-actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.6rem;
 }
@@ -645,31 +648,6 @@ footer {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-}
-
-.term-cta {
-  flex: none;
-  padding: 0.15rem 0.6rem;
-  border: 1px solid var(--border-strong);
-  border-radius: 0.3rem;
-  background: transparent;
-  color: var(--green-text);
-  font-family: inherit;
-  font-size: 1rem;
-  line-height: 1.5;
-  cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-}
-
-.term-cta:hover {
-  background: var(--surface-hover);
-  border-color: var(--matrix-green);
-  color: var(--green-text-hover);
-}
-
-.term-cta:focus-visible {
-  outline: 2px solid var(--green-neon);
-  outline-offset: 2px;
 }
 
 .term-toggle {
@@ -745,6 +723,7 @@ footer {
 
 .term-single-footer {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   gap: 0.5rem;
   margin-top: auto;
@@ -821,6 +800,41 @@ footer {
   line-height: 1;
 }
 
+@media (max-width: 768px) {
+  .term-panels {
+    grid-template-columns: 1fr;
+  }
+
+  .term-panel--wide {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .term-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 0.35rem;
+  }
+
+  .term-item {
+    flex-wrap: wrap;
+    column-gap: 0.35rem;
+  }
+
+  .term-name {
+    flex: 1 1 100%;
+    white-space: normal;
+    overflow: visible;
+    overflow-wrap: anywhere;
+  }
+
+  .term-leader {
+    display: none;
+  }
+}
+
 /* ===== ¿Qué incluye el precio? ===== */
 
 .includes {
@@ -878,6 +892,13 @@ footer {
   margin-inline: auto;
 }
 
+@media (max-width: 480px) {
+  .work-grid,
+  .includes-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 .work-card {
   display: flex;
   flex-direction: column;
@@ -908,6 +929,7 @@ footer {
 
 .work-title {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem;
   margin: 0;

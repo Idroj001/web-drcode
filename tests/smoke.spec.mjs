@@ -51,10 +51,10 @@ test.describe('estructura compartida', () => {
     }
   });
 
-  test('el modal se inyecta solo donde hace falta y no duplica formularios', async ({ page }) => {
-    // servicios.html tiene #modal-container y no un formulario propio.
-    await gotoReady(page, '/servicios.html');
-    await expect(page.locator('#contactModal')).toHaveCount(1);
+  test('el modal no se inyecta en las páginas con formulario propio', async ({ page }) => {
+    // index.html no tiene #modal-container: el modal no se inyecta.
+    await gotoReady(page, '/index.html');
+    await expect(page.locator('#contactModal')).toHaveCount(0);
 
     // contacto.html ya trae su propio formulario: no se inyecta el modal.
     await gotoReady(page, '/contacto.html');
@@ -66,15 +66,28 @@ test.describe('estructura compartida', () => {
     await expect(page.locator('#contactModal')).toHaveCount(0);
   });
 
-  test('servicios.html muestra paneles de precios y portafolio sin duplicar CTAs', async ({ page }) => {
+  test('servicios.html muestra paneles de precios y portafolio sin botones Solicitar', async ({ page }) => {
     await gotoReady(page, '/servicios.html');
 
     await expect(page.locator('.term-panel')).toHaveCount(4);
-    await expect(page.locator('.term-cta')).toHaveCount(11);
+    await expect(page.locator('.term-cta')).toHaveCount(0);
+    await expect(page.locator('#contactModal')).toHaveCount(0);
     await expect(page.locator('.work-card')).toHaveCount(6);
     await expect(page.getByRole('button', { name: 'Vista previa' })).toHaveCount(6);
     await expect(page.getByRole('link', { name: 'Visitar sitio' })).toHaveCount(5);
     await expect(page.getByRole('link', { name: 'Ver demo', exact: true })).toHaveCount(0);
+  });
+
+  test('los paneles de servicios no desbordan en tablet ni en móvil', async ({ page }) => {
+    for (const width of [768, 375, 320]) {
+      await page.setViewportSize({ width, height: 900 });
+      await gotoReady(page, '/servicios.html');
+
+      const overflow = await page.evaluate(() =>
+        document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      );
+      expect(overflow, `desbordamiento horizontal a ${width}px`).toBe(0);
+    }
   });
 
   test('404.html carga con la estructura compartida y vuelve al inicio', async ({ page }) => {
