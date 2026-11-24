@@ -55,7 +55,3 @@ export async function openedWhatsAppText(page) {
   expect(url.origin + url.pathname).toBe('https://wa.me/593999806465');
   return url.searchParams.get('text');
 }
-
-export async function readSlots(page) {
-  return page.evaluate(() => JSON.parse(localStorage.getItem('drcode_slots') || '{}'));
-}

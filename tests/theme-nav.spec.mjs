@@ -5,7 +5,6 @@ const REAL_PAGES = [
   ['/servicios.html', 'servicios.html'],
   ['/skills.html', 'skills.html'],
   ['/contacto.html', 'contacto.html'],
-  ['/calendario.html', 'calendario.html'],
 ];
 
 test.describe('tema', () => {

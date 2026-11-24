@@ -5,7 +5,6 @@ const REAL_PAGES = [
   '/servicios.html',
   '/skills.html',
   '/contacto.html',
-  '/calendario.html',
 ];
 
 const DEMO_PAGES = [
@@ -61,9 +60,6 @@ test.describe('estructura compartida', () => {
     await expect(page.locator('#contactModal')).toHaveCount(0);
     await expect(page.locator('main form#contactForm')).toHaveCount(1);
 
-    // calendario.html ya trae sus propios overlays: no se inyecta el modal.
-    await gotoReady(page, '/calendario.html');
-    await expect(page.locator('#contactModal')).toHaveCount(0);
   });
 
   test('servicios.html muestra paneles de precios y portafolio sin botones Solicitar', async ({ page }) => {
